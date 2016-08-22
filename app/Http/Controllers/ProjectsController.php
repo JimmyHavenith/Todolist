@@ -5,6 +5,7 @@ use Redirect;
 use App\Project;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Flash;
 
 use Illuminate\Http\Request;
 
@@ -41,7 +42,8 @@ class ProjectsController extends Controller {
 		$input = Input::all();
 		Project::create( $input );
 
-		return Redirect::route('projects.index')->with('message', 'Project created');
+		flash('Projet ajouté', 'success');
+		return Redirect::route('projects.index');
 	}
 
 	/**

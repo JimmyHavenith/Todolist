@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('mainContent')
+  @include('flash::message')
   <h2>Projets</h2>
 
   @if ( !$projects->count() )

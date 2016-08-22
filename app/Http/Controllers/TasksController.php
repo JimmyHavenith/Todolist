@@ -6,8 +6,8 @@ use App\Project;
 use App\Task;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
+use Flash;
 
 class TasksController extends Controller {
 
@@ -45,7 +45,8 @@ class TasksController extends Controller {
 		$input['project_id'] = $project->id;
 		Task::create( $input );
 
-		return Redirect::route('projects.show', $project->slug)->with('message', 'Task created.');
+		flash('Tâche ajoutée', 'success');
+		return Redirect::route('projects.show', $project->slug);
 	}
 
 	/**
@@ -84,7 +85,8 @@ class TasksController extends Controller {
 		$input = array_except(Input::all(), '_method');
 		$task->update($input);
 
-		return Redirect::route('projects.tasks.show', [$project->slug, $task->slug])->with('message', 'Task updated.');
+		flash('Tâche mise à jour', 'success');
+		return Redirect::route('projects.tasks.show', [$project->slug, $task->slug]);
 	}
 
 	/**
@@ -98,7 +100,8 @@ class TasksController extends Controller {
 	{
 		$task->delete();
 
-		return Redirect::route('projects.show', $project->slug)->with('message', 'Task deleted.');
+		flash('Tâche supprimée', 'success');
+		return Redirect::route('projects.show', $project->slug);
 	}
 
 }
