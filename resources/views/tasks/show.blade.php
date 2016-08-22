@@ -1,4 +1,5 @@
 @extends('layout')
+
 @section('mainContent')
   <h2>
     {{ $task->name }}
