@@ -90,7 +90,8 @@ class ProjectsController extends Controller {
 		$input = array_except(Input::all(), '_method');
 		$project->update($input);
 
-		return Redirect::route('projects.show', $project->slug)->with('message', 'Project updated.');
+		flash('Projet modifié', 'success');
+		return Redirect::route('projects.show', $project->slug);
 	}
 
 	/**
@@ -103,7 +104,8 @@ class ProjectsController extends Controller {
 	{
 		$project->delete();
 
-		return Redirect::route('projects.index')->with('message', 'Project deleted.');
+		flash('Projet supprimé', 'success');
+		return Redirect::route('projects.index');
 	}
 
 }
