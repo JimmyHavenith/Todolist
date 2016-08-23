@@ -26,18 +26,18 @@
                 <li><a href="{{ url('/projects') }}">Projets</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              @if (Auth::guest())
-                <li><a href="{{ url('/login') }}">Se connecter</a></li>
-                <li><a href="{{ url('/register') }}">S'inscire</a></li>
+              @if( Auth::check() )
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="/auth/logout"><i class="fa fa-btn fa-sign-out"></i>Se déconnecter</a></li>
+                </ul>
+              </li>
               @else
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                      {{ Auth::user()->name }} <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Se déconecter</a></li>
-                  </ul>
-                </li>
+                <li><a href="/auth/login">Se connecter</a></li>
+                <li><a href="/auth/register">S'inscire</a></li>
               @endif
             </ul>
           </div>
@@ -48,15 +48,6 @@
             @include('flash::message')
         </div>
       @endif
-      @if ($errors->any())
-        <div class="flash alert-danger">
-          @foreach ($errors->all() as $error )
-            <p>
-              {{ error }}
-            </p>
-          @endforeach
-        </div>
-      @endif
     </header>
     <section style="min-height: 500px; margin-top: 60px">
       <div class="container">
@@ -65,5 +56,7 @@
     </section>
     <footer style="background-color: #222222;">
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
   </body>
 </html>
