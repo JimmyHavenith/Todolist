@@ -23,7 +23,13 @@
           </div>
           <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="{{ url('/projects') }}">Projets</a></li>
+              @if( Auth::check() )
+              <li>
+                <a href="/projects">Projets</a>
+              </li>
+              @else
+                <li><a href="/auth/login">Projets</a></li>
+              @endif
             </ul>
             <ul class="nav navbar-nav navbar-right">
               @if( Auth::check() )
