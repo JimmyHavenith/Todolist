@@ -28,7 +28,12 @@ class ProjectsController extends Controller {
 
 	public function index()
 	{
-		$projects = Project::all();
+		if(\Auth::check()){
+			$projects = \Auth::user()->projects()->get();
+		}else{
+			return view('auth/login');
+		}
+		
 		return view('projects.index', compact('projects'));
 	}
 
@@ -53,6 +58,7 @@ class ProjectsController extends Controller {
 		$this->validate($request, $this->rules);
 
 		$input = Input::all();
+		$input['user_id'] = \Auth::id();
 		Project::create( $input );
 
 		flash('Projet ajouté', 'success');
