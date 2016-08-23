@@ -28,6 +28,15 @@
         <@include('flash::message')
       </div>
     @endif
+    @if ($errors->any())
+      <div class="flash alert-danger">
+        @foreach ($errors->all() as $error )
+          <p>
+            {{ error }}
+          </p>
+        @endforeach
+      </div>
+    @endif
     <section style="min-height: 500px; margin-top: 60px">
       <div class="container">
         @yield('mainContent')
