@@ -20,6 +20,13 @@
 </div>
 
 <div class="form-group">
+	{{ Form::label('date', 'Echeance', ['class' => 'control-label col-sm-2']) }}
+	<div class="col-sm-10">
+		{!! Form::text('date', '', array('id' => 'datepicker')) !!}
+	</div>
+</div>
+
+<div class="form-group">
 	<div class="col-sm-10 col-sm-offset-2">
 		<div class="input-group">
 			<div class="checkbox">
