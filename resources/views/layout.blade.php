@@ -8,18 +8,32 @@
   </head>
   <body>
     <header>
-      <h1>Todolist</h1>
+      <div class="navbar navbar-default navbar-fixed-top" style="background-color: #222222; color: white;">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/projects">Todolist</a>
+          </div>
+          <div id="navbar-main" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a starget="_blank" href="#">Se connecter</a></li>
+              <li><a target="_blank" href="#">S'inscrire</a></li>
+              <li><a target="_blank" href="#">Se déconnecter</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </header>
     @if (session()->has('flash_notification.message'))
       <div class="flash alert-info">
         <@include('flash::message')
       </div>
     @endif
-    @yield('mainContent')
-    <footer>
-      <p>
-        Created by Jimmy Havenith
-      </p>
+    <section style="min-height: 500px; margin-top: 60px">
+      <div class="container">
+        @yield('mainContent')
+      </div>
+    </section>
+    <footer style="background-color: #222222;">
     </footer>
   </body>
 </html>
