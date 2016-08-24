@@ -27,6 +27,8 @@ class CreateProjectsAndTasksTables extends Migration
           $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
           $table->string('name')->default('');
           $table->string('slug')->default('');
+          $table->integer('user_id')->unsigned();
+          $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('restrict');
           $table->boolean('completed')->default(false);
           $table->text('description')->default('');
           $table->timestamps();

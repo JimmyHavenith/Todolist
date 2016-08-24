@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr-BE">
   <head>
     <meta charset="utf-8">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
             <ul class="nav navbar-nav">
               @if( Auth::check() )
               <li>
-                <a href="/projects">Projets</a>
+                <a href="/today">Aujourd'hui</a>
               </li>
               @else
                 <li><a href="/auth/login">Projets</a></li>

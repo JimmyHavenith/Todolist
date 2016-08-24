@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Flash;
+use Carbon\Carbon;
 
 class TasksController extends Controller {
 
@@ -25,6 +26,12 @@ class TasksController extends Controller {
 	 */
 	public function index(Project $project)
 	{
+		if(\Auth::check()){
+			$tasks = \Auth::user()->tasks()->get();
+		}else{
+			return view('auth/login');
+		}
+
 		return view('tasks.index', compact('project'));
 	}
 
@@ -52,6 +59,7 @@ class TasksController extends Controller {
 
 		$input = Input::all();
 		$input['project_id'] = $project->id;
+		$input['user_id'] = \Auth::id();
 		Task::create( $input );
 
 		flash('Tâche ajoutée', 'success');
@@ -116,4 +124,18 @@ class TasksController extends Controller {
 		return Redirect::route('projects.show', $project->slug);
 	}
 
+	public function today(Project $project)
+	{
+		setlocale(LC_ALL, 'fr_FR.UTF-8' );
+		Carbon::setLocale('fr');
+		$now = Carbon::now();
+		$tasks = Task::where('user_id', \Auth::id())->get();
+		foreach ($tasks as $task) {
+			$m = substr($task->date, 0, 2);
+			$d = substr($task->date, 3, 2);
+			$y = substr($task->date, 6, 4);
+			$newdate = Carbon::create($y, $m, $d);
+			dd($newdate);
+		}
+	}
 }
