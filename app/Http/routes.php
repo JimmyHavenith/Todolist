@@ -13,7 +13,11 @@
 
 /* Homepage */
 Route::get('/', function () {
-    return view('home/homepage');
+  if(Auth::check())
+  {
+    return Redirect::route('today');
+  }
+  return view('home/homepage');
 });
 
 /* Auth */
@@ -41,4 +45,4 @@ Route::bind('projects', function($value, $route) {
 Route::resource('projects', 'ProjectsController');
 Route::resource('projects.tasks', 'TasksController');
 
-Route::get('today', 'TasksController@today');
+Route::get('today', ['as' => 'today', 'uses' => 'TasksController@today']);
