@@ -1,11 +1,228 @@
-.dashboard{
-  background-color: #202020;
-  display: inline-block;
-  height: 100%;
-  vertical-align: top;
-  width: 24%;
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-.tasks{
-  width: 75%;
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  height: 100%;
+  color: #202020;
+}
+
+header {
+  background-color: #202020;
+  padding: 15px;
+  height: 45px;
+}
+
+header .header-menu-logo {
+  float: left;
+}
+
+header .header-menu-logo a {
+  color: white;
+}
+
+header .header-menu-logo a:hover {
+  color: #fafafa;
+  text-decoration: none;
+}
+
+header .header-menu-nav {
+  float: right;
+}
+
+.lists {
   display: inline-block;
+  width: 20%;
+}
+
+.lists .lists-lists li a {
+  display: block;
+  padding: 15px;
+  color: #202020;
+  text-decoration: none;
+  border-top: 1px solid #fafafa;
+  border-bottom: 1px solid #fafafa;
+}
+
+.lists .lists-lists li a:hover {
+  background-color: white;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.lists .lists-lists .lists-add a {
+  color: #217dbb;
+  border-top: 1px solid #f1f1f1;
+}
+
+.lists .lists-lists .lists-add a span {
+  margin-right: 5px;
+}
+
+.tasks {
+  display: inline-block;
+  width: 79.7%;
+  background-color: white;
+  height: 100%;
+  border-left: 1px solid #f1f1f1;
+  vertical-align: top;
+}
+
+.tasks .tasks-tasks {
+  padding: 15px;
+}
+
+.tasks .tasks-tasks h2 {
+  border-bottom: 1px solid #f1f1f1;
+  font-weight: bold;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.tasks .tasks-tasks .task-add {
+  display: block;
+  width: 100%;
+  padding-bottom: 25px;
+}
+
+.tasks .tasks-tasks .task-add a {
+  background-color: #217dbb;
+  color: white;
+  border-radius: 2px;
+  padding: 5px 8px;
+  font-size: 14px;
+}
+
+.tasks .tasks-tasks .task-add a span {
+  margin-right: 5px;
+}
+
+.tasks .tasks-tasks .task-add a:hover {
+  text-decoration: none;
+}
+
+.tasks .tasks-tasks .task-add::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.tasks .tasks-tasks h3 a {
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #afafaf;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 16px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  background-color: #fafafa;
+  border: 1px solid #f1f1f1;
+  font-size: 14px;
+}
+
+.tasks .tasks-tasks ol {
+  margin: 15px 0 25px;
+}
+
+.tasks .tasks-tasks ol .tasks-item {
+  border-radius: 3px;
+  background-color: #f1f1f1;
+  padding: 15px 0 15px 15px;
+  margin-bottom: 15px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-name {
+  margin-left: 15px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-button {
+  float: right;
+  margin-right: 15px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-option {
+  text-decoration: none;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-option .tasks-item-option-logo .blue {
+  background-color: #217dbb;
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  border-radius: 2px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-option .tasks-item-option-logo .orange {
+  background-color: #dd4814;
+  display: inline-block;
+  height: 13px;
+  width: 13px;
+  border-radius: 2px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-option .tasks-item-option-txt {
+  display: none;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-option:hover {
+  text-decoration: none;
 }
