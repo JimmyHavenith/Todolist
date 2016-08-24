@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <title>Todolist</title>
@@ -27,6 +28,9 @@
               @if( Auth::check() )
               <li>
                 <a href="/today">Aujourd'hui</a>
+              </li>
+              <li>
+                <a href="/projects">Projets</a>
               </li>
               @else
                 <li><a href="/auth/login">Projets</a></li>
@@ -56,8 +60,23 @@
         </div>
       @endif
     </header>
-    <section style="min-height: 500px; margin-top: 60px">
-      <div class="container">
+    @if( Auth::check() )
+    <section class="dashboard">
+      <div class="projets">
+        <ul>
+          <li><a href="/today">Aujourd'hui</a></li>
+          <li><a href="#">Cette semaine</a></li>
+        </ul>
+          <ul>
+            @foreach( $categories as $category)
+              <li><a href="#">{{ $category->name }}</a></li>
+            @endforeach
+          </ul>
+      </div>
+    </section>
+    @endif
+    <section class="tasks">
+      <div>
         @yield('mainContent')
       </div>
     </section>

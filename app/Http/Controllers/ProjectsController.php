@@ -33,7 +33,7 @@ class ProjectsController extends Controller {
 		}else{
 			return view('auth/login');
 		}
-		
+
 		return view('projects.index', compact('projects'));
 	}
 
