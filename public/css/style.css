@@ -226,3 +226,7 @@ header .header-menu-nav {
 .tasks .tasks-tasks ol .tasks-item .tasks-item-option:hover {
   text-decoration: none;
 }
+
+.completed + span {
+  text-decoration: line-through;
+}

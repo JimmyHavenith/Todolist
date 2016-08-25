@@ -3,9 +3,10 @@
 @section('mainContent')
   <h2>Aujourd'hui</h2>
   <div class="task-add">
-    <a href="" class="task-add-button" type="button">
-      <span>+</span>Ajouter une tâche
-    </a>
+    {!! Form::model(new App\Task, ['route' => ['projects.tasks.store', 'today'], 'class'=>'form-horizontal', 'role' => 'form']) !!}
+      <input type="text" name="name" placeholder="Ajouter une tâche">
+      {{ Form::button('Ajouter', array('class'=>'btn btn-primary', 'type'=>'submit')) }}
+    {!! Form::close() !!}
   </div>
   @foreach( $project as $value )
     @if ( in_array( $value->id, $todayProject) )

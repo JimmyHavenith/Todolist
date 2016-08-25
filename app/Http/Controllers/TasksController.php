@@ -14,8 +14,6 @@ class TasksController extends Controller {
 
 	protected $rules = [
 		'name' => ['required', 'min:3'],
-		'slug' => ['required'],
-		'description' => ['required'],
 	];
 
 	/**
@@ -53,13 +51,14 @@ class TasksController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function store(Project $project, Request $request)
+	public function store(Project $project, Request $request, Task $task)
 	{
 		$this->validate($request, $this->rules);
 
 		$input = Input::all();
 		$input['project_id'] = $project->id;
 		$input['user_id'] = \Auth::id();
+		$input['slug'] = str_slug( $input['name'], '-');
 		Task::create( $input );
 
 		flash('Tâche ajoutée', 'success');
@@ -131,7 +130,7 @@ class TasksController extends Controller {
 		$project = $project->all();
 		$now = Carbon::now();
 		$todayTasks = [];
-		$tasks = Task::where('user_id', \Auth::id())->get();
+		$tasks = Task::where('user_id', \Auth::id())->where('date', '!=', '')->get();
 		foreach ($tasks as $task)
 		{
 			$m = substr($task->date, 0, 2);
@@ -155,4 +154,23 @@ class TasksController extends Controller {
 
 		return view('tasks.today', compact('project', 'todayTasks', 'todayProject'));
 	}
+
+		public function check(Project $project, Request $request)
+		{
+			$input = Input::all();
+			foreach ($input['task-item'] as $value)
+			{
+				$task = Task::findOrfail($value);
+				if( $task->completed == 0 )
+				{
+					$task->completed = 1;
+				} else
+				{
+					$task->completed = 0;
+				}
+				$task->save();
+			}
+			return redirect()->back();
+		}
+
 }
