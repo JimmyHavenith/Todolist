@@ -1,33 +1,24 @@
 @extends('layout')
 
 @section('mainContent')
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            {!! link_to_route('projects.show', $project->name, [$project->slug]) !!} -
-            {{ $task->name }}
-          </div>
-          <div class="panel-body">
-            {{ $task->description }}
-          </div>
-          <div class="panel-footer">
-            <a href="{{ route('projects.show', $project->slug) }}" class="btn btn-sm btn-info" type="button">
-              <span class="fa fa-reply" aria-hidden="true"></span> Retourner à {{ $project->name }}
-            </a>
-            <a href="{{ route('projects.tasks.edit', array($project->slug, $task->slug)) }}" class="btn btn-sm btn-warning">
-              <span class="fa fa-fw fa-pencil" aria-hidden="true"></span>
-              <span class="hidden-xs">
-                Editer la
-              </span>
-              <span class="hidden-sm hidden-xs">
-                Tâche
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
+  <h2>{{ $task->name }}</h2>
+  <div class="task-add">
+    <div class="task-project">
+      <h3>Projet</h3>
+      <span>{!! link_to_route('projects.show', $project->name, [$project->slug]) !!}</span>
+    </div>
+    <div class="task-description">
+      <h3>Description</h3>
+      <p>
+        @if( empty( $task->description ) )
+          Il n'y a pas de descriptions
+        @else
+          {{ $task->description }}
+        @endif
+      </p>
     </div>
   </div>
+  <a href="{{ route('projects.tasks.edit', array($project->slug, $task->slug)) }}" class="btn btn-sm btn-warning">
+      Modifier {{ $task->name }}
+  </a>
 @endsection

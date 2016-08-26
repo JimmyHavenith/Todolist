@@ -31,14 +31,7 @@
         @endif
       @endforeach
     </ol>
-    <?php
-      foreach( $project->tasks as $task){
-        $taskCompleted = $task->completed;
-      }
-    ?>
-    @if( $taskCompleted == 0 )
-      {{ Form::button('Valider', array('class'=>'task-done-submit', 'type'=>'submit')) }}
-    @endif
+    {{ Form::button('Valider', array('class'=>'task-done-submit', 'type'=>'submit')) }}
   {!! Form::close() !!}
 
   <h3 class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></h3>
@@ -65,8 +58,6 @@
         @endif
       @endforeach
     </ol>
-    @if( $taskCompleted == 1 )
-      {{ Form::button('Valider', array('class'=>'task-done-submit', 'type'=>'submit')) }}
-    @endif
+    {{ Form::button('Valider', array('class'=>'task-done-submit', 'type'=>'submit')) }}
   {!! Form::close() !!}
 @endsection

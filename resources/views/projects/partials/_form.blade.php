@@ -1,19 +1,12 @@
-<div class="form-group">
-	{{ Form::label('name', 'Project Name', ['class' => 'control-label col-sm-2']) }}
-	<div class="col-sm-10">
-		{{ Form::text('name', NULL, array_merge(['class' => 'form-control', 'placeholder' => 'Project Name'])) }}
+<div>
+	{{ Form::label('name', 'Nom', ['class' => 'task-edit-form-label']) }}
+	<div>
+		{{ Form::text('name', NULL, array_merge(['class' => 'task-edit-form', 'placeholder' => 'Nom du projet'])) }}
 	</div>
 </div>
 
-<div class="form-group">
-	{{ Form::label('slug', 'Project Slug', ['class' => 'control-label col-sm-2']) }}
-	<div class="col-sm-10">
-		{{ Form::text('slug', NULL, array_merge(['class' => 'form-control', 'placeholder' => 'Project Slug'])) }}
-	</div>
-</div>
-
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-		{{ Form::button('<span class="glyphicon glyphicon-'.$submit_icon.'" aria-hidden="true"></span>&nbsp; '.$submit_text, array('class'=>'btn btn-primary', 'type'=>'submit')) }}
+<div>
+    <div>
+		{{ Form::button('Créer le projet', array('class'=>'task-edit-form-submit', 'type'=>'submit')) }}
     </div>
 </div>

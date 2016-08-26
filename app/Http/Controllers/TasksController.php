@@ -105,7 +105,7 @@ class TasksController extends Controller {
 		$task->update($input);
 
 		flash('Tâche mise à jour', 'success');
-		return Redirect::route('projects.tasks.show', [$project->slug, $task->slug]);
+		return Redirect::route('projects.show', [$project->slug]);
 	}
 
 	/**

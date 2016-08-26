@@ -12,7 +12,6 @@ class ProjectsController extends Controller {
 
 	protected $rules = [
 		'name' => ['required', 'min:3'],
-		'slug' => ['required'],
 	];
 
 	/**
@@ -53,16 +52,18 @@ class ProjectsController extends Controller {
 	 * @return Response
 	 */
 
-	public function store(Request $request)
+	public function store(Request $request, Project $project)
 	{
 		$this->validate($request, $this->rules);
 
 		$input = Input::all();
 		$input['user_id'] = \Auth::id();
+		$input['slug'] = str_slug( $input['name'], '-');
 		Project::create( $input );
 
 		flash('Projet ajouté', 'success');
-		return Redirect::route('projects.index');
+		return Redirect::route('projects.index', $project->slug);
+
 	}
 
 	/**
