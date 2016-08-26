@@ -1,0 +1,30 @@
+.lists{
+  display: inline-block;
+  width: 20%;
+  .lists-lists{
+    li{
+      a{
+        display: block;
+        padding: 15px;
+        color: $color-black;
+        text-decoration: none;
+        border-top: 1px solid $color-white-break;
+        border-bottom: 1px solid $color-white-break;
+      }
+      a:hover{
+        background-color: white;
+        border-top: 1px solid $color-border;
+        border-bottom: 1px solid $color-border;
+      }
+    }
+    .lists-add{
+      a{
+        color: $color-blue;
+        border-top: 1px solid $color-border;
+        span{
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

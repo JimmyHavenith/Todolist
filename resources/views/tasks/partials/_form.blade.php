@@ -1,45 +1,26 @@
-<div class="form-group">
-	{{ Form::label('name', 'Task Name', ['class' => 'control-label col-sm-2']) }}
-	<div class="col-sm-10">
-		{{ Form::text('name', NULL, array_merge(['class' => 'form-control', 'placeholder' => 'Task Name'])) }}
+<div>
+	{{ Form::label('name', 'Nom', ['class' => 'task-edit-form-label']) }}
+	<div>
+		{{ Form::text('name', NULL, array_merge(['class' => 'task-edit-form', 'placeholder' => 'Nom de la tâche'])) }}
 	</div>
 </div>
 
-<div class="form-group">
-	{{ Form::label('slug', 'Task Slug', ['class' => 'control-label col-sm-2']) }}
-	<div class="col-sm-10">
-		{{ Form::text('slug', NULL, array_merge(['class' => 'form-control', 'placeholder' => 'Task Slug'])) }}
+<div>
+	{{ Form::label('description', 'Description', ['class' => 'task-edit-form-label']) }}
+	<div>
+		{{ Form::textarea('description', NULL, array_merge(['class' => 'task-edit-form', 'placeholder' => 'Description de la tâche'])) }}
 	</div>
 </div>
 
-<div class="form-group">
-	{{ Form::label('description', 'Description', ['class' => 'control-label col-sm-2']) }}
-	<div class="col-sm-10">
-		{{ Form::textarea('description', NULL, array_merge(['class' => 'form-control', 'placeholder' => 'Task Description'])) }}
+<div>
+	{{ Form::label('date', 'Écheance', ['class' => 'task-edit-form-label']) }}
+	<div>
+		{!! Form::text('date', NULL, array_merge(['class' => 'task-edit-form-date', 'id' => 'datepicker', 'placeholder' => '08/26/2016'])) !!}
 	</div>
 </div>
 
-<div class="form-group">
-	{{ Form::label('date', 'Echeance', ['class' => 'control-label col-sm-2']) }}
-	<div class="col-sm-10">
-		{!! Form::text('date', '', array('id' => 'datepicker')) !!}
-	</div>
-</div>
-
-<div class="form-group">
-	<div class="col-sm-10 col-sm-offset-2">
-		<div class="input-group">
-			<div class="checkbox">
-				<label>
-					{!! Form::checkbox('completed') !!} Completed
-				</label>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-10">
-	   {{ Form::button('<span class="glyphicon glyphicon-'.$submit_icon.'" aria-hidden="true"></span> '.$submit_text, array('class'=>'btn btn-primary', 'type'=>'submit')) }}
+<div>
+  <div>
+	   {{ Form::button('Modifier la tâche', array('class' => 'task-edit-form-submit', 'type'=>'submit')) }}
   </div>
 </div>

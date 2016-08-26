@@ -1,7 +1,7 @@
 header{
   background-color: $color-black;
   padding: 15px;
-  height: 45px;
+  height: 20px;
   .header-menu-logo{
     float: left;
     a{
@@ -14,5 +14,8 @@ header{
   }
   .header-menu-nav{
     float: right;
+    a{
+      color: white;
+    }
   }
 }

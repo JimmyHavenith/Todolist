@@ -155,22 +155,43 @@ class TasksController extends Controller {
 		return view('tasks.today', compact('project', 'todayTasks', 'todayProject'));
 	}
 
-		public function check(Project $project, Request $request)
+	public function check()
+	{
+		$input = Input::all();
+		foreach($input['task-check'] as $value)
 		{
-			$input = Input::all();
-			foreach ($input['task-item'] as $value)
-			{
-				$task = Task::findOrfail($value);
-				if( $task->completed == 0 )
-				{
-					$task->completed = 1;
-				} else
-				{
-					$task->completed = 0;
-				}
-				$task->save();
-			}
-			return redirect()->back();
+			$task = Task::findOrFail($value);
+			$task->completed = 1;
+			$task->save();
 		}
+
+		return redirect()->back();
+	}
+
+	public function uncheck()
+	{
+		$input = Input::all();
+		$uncheck = $input['task-uncheck'];
+		$check = !empty($input['task-check']) ? $input['task-check'] : null;
+		if( $check == null ) {
+			foreach($uncheck as $value)
+			{
+					$task = Task::findOrFail($value);
+					$task->completed = 0;
+					$task->save();
+			}
+		} else {
+			foreach($uncheck as $value)
+			{
+				if ( !in_array( $value, $check ) ) {
+					$task = Task::findOrFail($value);
+					$task->completed = 0;
+					$task->save();
+				}
+			}
+		}
+
+		return redirect()->back();
+	}
 
 }

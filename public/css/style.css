@@ -57,17 +57,17 @@ html {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #f5f5f5;
   font-family: "Lato", sans-serif;
   font-size: 18px;
   height: 100%;
-  color: #202020;
+  color: #333;
 }
 
 header {
-  background-color: #202020;
+  background-color: #333;
   padding: 15px;
-  height: 45px;
+  height: 20px;
 }
 
 header .header-menu-logo {
@@ -79,12 +79,16 @@ header .header-menu-logo a {
 }
 
 header .header-menu-logo a:hover {
-  color: #fafafa;
+  color: #f5f5f5;
   text-decoration: none;
 }
 
 header .header-menu-nav {
   float: right;
+}
+
+header .header-menu-nav a {
+  color: white;
 }
 
 .lists {
@@ -95,21 +99,21 @@ header .header-menu-nav {
 .lists .lists-lists li a {
   display: block;
   padding: 15px;
-  color: #202020;
+  color: #333;
   text-decoration: none;
-  border-top: 1px solid #fafafa;
-  border-bottom: 1px solid #fafafa;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .lists .lists-lists li a:hover {
   background-color: white;
-  border-top: 1px solid #f1f1f1;
-  border-bottom: 1px solid #f1f1f1;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .lists .lists-lists .lists-add a {
-  color: #217dbb;
-  border-top: 1px solid #f1f1f1;
+  color: #1ca0e9;
+  border-top: 1px solid #e6e6e6;
 }
 
 .lists .lists-lists .lists-add a span {
@@ -121,7 +125,7 @@ header .header-menu-nav {
   width: 79.7%;
   background-color: white;
   height: 100%;
-  border-left: 1px solid #f1f1f1;
+  border-left: 1px solid #e6e6e6;
   vertical-align: top;
 }
 
@@ -130,7 +134,7 @@ header .header-menu-nav {
 }
 
 .tasks .tasks-tasks h2 {
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #e6e6e6;
   font-weight: bold;
   padding-bottom: 15px;
   margin-bottom: 15px;
@@ -143,7 +147,7 @@ header .header-menu-nav {
 }
 
 .tasks .tasks-tasks .task-add a {
-  background-color: #217dbb;
+  background-color: #1ca0e9;
   color: white;
   border-radius: 2px;
   padding: 5px 8px;
@@ -156,6 +160,52 @@ header .header-menu-nav {
 
 .tasks .tasks-tasks .task-add a:hover {
   text-decoration: none;
+}
+
+.tasks .tasks-tasks .task-add .task-add-form, .tasks .tasks-tasks .task-add .task-edit-form, .tasks .tasks-tasks .task-add .task-edit-form-date {
+  background-color: white;
+  border: 0 none;
+  border: 1px solid #e6e6e6;
+  color: #222;
+  display: block;
+  font-family: "Open Sans",Arial,sans-serif;
+  font-size: 16px;
+  line-height: normal !important;
+  margin-bottom: 10px;
+  padding: 10px 18px 11px;
+  width: 97%;
+  border-radius: 2px;
+}
+
+.tasks .tasks-tasks .task-add .task-edit-form, .tasks .tasks-tasks .task-add .task-edit-form-date {
+  margin: 10px 0 25px;
+}
+
+.tasks .tasks-tasks .task-add .task-add-form:focus {
+  border: 2px solid #e6e6e6;
+}
+
+.tasks .tasks-tasks .task-add .task-add-submit {
+  background-color: #4bc800;
+  border: medium none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 7px 20px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.tasks .tasks-tasks .task-add .task-add-submit:hover {
+  background-color: #47be00;
+}
+
+.tasks .tasks-tasks .task-add .task-edit-form-label {
+  font-size: 16px;
+}
+
+.tasks .tasks-tasks .task-add .task-edit-form-date {
+  width: 85px;
 }
 
 .tasks .tasks-tasks .task-add::after {
@@ -174,20 +224,25 @@ header .header-menu-nav {
   line-height: 16px;
   padding: 3px 10px;
   text-transform: uppercase;
-  background-color: #fafafa;
-  border: 1px solid #f1f1f1;
+  background-color: #f5f5f5;
+  border: 1px solid #e6e6e6;
   font-size: 14px;
 }
 
+.tasks .tasks-tasks .tasks-done-title {
+  margin-top: 15px;
+}
+
 .tasks .tasks-tasks ol {
-  margin: 15px 0 25px;
+  margin: 15px 0;
 }
 
 .tasks .tasks-tasks ol .tasks-item {
   border-radius: 3px;
-  background-color: #f1f1f1;
+  background-color: #f5f5f5;
   padding: 15px 0 15px 15px;
   margin-bottom: 15px;
+  border: 1px solid #e6e6e6;
 }
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-name {
@@ -204,7 +259,7 @@ header .header-menu-nav {
 }
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-option .tasks-item-option-logo .blue {
-  background-color: #217dbb;
+  background-color: #1ca0e9;
   display: inline-block;
   height: 13px;
   width: 13px;
@@ -225,6 +280,21 @@ header .header-menu-nav {
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-option:hover {
   text-decoration: none;
+}
+
+.tasks .tasks-tasks .task-done-submit, .tasks .tasks-tasks .task-edit-form-submit {
+  background-color: #1ca0e9;
+  border: medium none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 7px 20px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.tasks .tasks-tasks .task-done-submit:hover, .tasks .tasks-tasks .task-edit-form-submit:hover {
+  background-color: #0389cf;
 }
 
 .completed + span {
