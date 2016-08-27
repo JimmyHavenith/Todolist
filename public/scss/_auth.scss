@@ -1,0 +1,88 @@
+.auth{
+  padding-top: 75px;
+  text-align: center;
+  font-size: 20px;
+  .auth-auth{
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(50, 50, 50, 0.08);
+    display: block;
+    margin: auto;
+    width: 350px;
+    margin-top: 25px;
+    padding: 20px 0;
+    .auth-form{
+      .auth-txt{
+        label{
+          font-size: 16px;
+          color: $color-grey;
+          float: left;
+          margin-bottom: 8px;
+          padding: 0 15px;
+        }
+        input{
+          border: 1px solid $color-border;
+          display: block;
+          margin: 15px auto 25px;
+          padding: 8px 15px;
+          width: 85%;
+          border-radius: 2px;
+        }
+        input:focus{
+          border: 1px solid $color-blue;
+        }
+        input:focus label{
+          color: grey;
+        }
+      }
+      .auth-checkbox{
+        display: block;
+        label{
+          color: $color-grey;
+          display: block;
+          float: left;
+          font-size: 16px;
+          padding-left: 8px
+        }
+      }
+      .auth-checkbox::after{
+        display: block;
+        clear: both;
+        content: "";
+      }
+      .auth-submit {
+        background-color: $color-blue;
+        border: medium none;
+        border-radius: 2px;
+        color: white;
+        display: block;
+        font-size: 17px;
+        font-weight: bold;
+        margin: 25px auto auto;
+        padding: 8px;
+        width: 94%;
+        cursor: pointer;
+        letter-spacing: 1px;
+      }
+      .auth-submit:hover{
+        background-color: $color-blue-hover;
+      }
+    }
+  }
+  .auth-register{
+    p{
+      color: grey;
+      margin-top: 15px;
+      font-size: 15px;
+      line-height: 1.2;
+    }
+    a{
+      color: $color-blue;
+      text-decoration: none;
+    }
+    a:hover{
+      color: $color-blue-hover;
+      text-decoration: underline;
+    }
+  }
+}
