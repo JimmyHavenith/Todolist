@@ -155,6 +155,37 @@ class TasksController extends Controller {
 		return view('tasks.today', compact('project', 'todayTasks', 'todayProject'));
 	}
 
+	public function tomorrow(Project $project)
+	{
+		setlocale(LC_ALL, 'fr_FR.UTF-8' );
+		Carbon::setLocale('fr');
+		$project = $project->all();
+		$tomorrow = Carbon::tomorrow();
+		$tomorrowTasks = [];
+		$tasks = Task::where('user_id', \Auth::id())->where('date', '!=', '')->get();
+		foreach ($tasks as $task)
+		{
+			$m = substr($task->date, 0, 2);
+			$d = substr($task->date, 3, 2);
+			$y = substr($task->date, 6, 4);
+			$newdate = Carbon::create($y, $m, $d);
+			if ($newdate == $tomorrow)
+			{
+				$tomorrowTasks[] = $task;
+			}
+		}
+		$tomorrowProject = [];
+		foreach ($tomorrowTasks as $task)
+		{
+			if ( !in_array( $task->project_id, $tomorrowProject ) )
+			{
+				$tomorrowProject[] = $task->project_id;
+			}
+		}
+
+		return view('tasks.tomorrow', compact('project', 'tomorrowTasks', 'tomorrowProject'));
+	}
+
 	public function check()
 	{
 		$input = Input::all();

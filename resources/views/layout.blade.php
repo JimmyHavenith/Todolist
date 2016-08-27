@@ -38,6 +38,7 @@
           <div class="lists-scroll">
             <ul>
               <li><a href="/today">Aujourd'hui</a></li>
+              <li><a href="/tomorrow">Demain</a></li>
               <li><a href="#">Cette semaine</a></li>
             </ul>
             <ul>

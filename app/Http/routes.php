@@ -46,6 +46,7 @@ Route::resource('projects', 'ProjectsController');
 Route::resource('projects.tasks', 'TasksController');
 
 Route::get('today', ['as' => 'today', 'uses' => 'TasksController@today']);
+Route::get('tomorrow', ['as' => 'tomorrow', 'uses' => 'TasksController@tomorrow']);
 
 Route::post('check', ['as' => 'check', 'uses' => 'TasksController@check']);
 Route::post('uncheck', ['as' => 'uncheck', 'uses' => 'TasksController@uncheck']);
