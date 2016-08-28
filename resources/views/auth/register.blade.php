@@ -3,7 +3,7 @@
 @section('mainContent')
   <div class="auth">
     <div class="auth-logo">
-      <h1>Todolist</h1>
+      <h1>minimaList</h1>
     </div>
     <div class="auth-auth">
       <div class="auth-form-register">
