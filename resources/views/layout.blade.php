@@ -42,6 +42,7 @@
               <li><a href="#">Cette semaine</a></li>
             </ul>
             <ul>
+              <?php $categories = \Auth::user()->projects()->get(); ?>
               @foreach( $categories as $category)
                 <li><a href="{{ route('projects.show', $category->slug) }}">{{ $category->name }}</a></li>
               @endforeach

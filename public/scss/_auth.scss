@@ -3,15 +3,15 @@
   text-align: center;
   font-size: 20px;
   .auth-auth{
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(50, 50, 50, 0.08);
-    display: block;
-    margin: auto;
-    width: 350px;
-    margin-top: 25px;
-    padding: 20px 0;
-    .auth-form{
+    .auth-form, .auth-form-register{
+      background-color: white;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(50, 50, 50, 0.08);
+      display: block;
+      margin: auto;
+      width: 350px;
+      margin-top: 25px;
+      padding: 20px 0;
       .auth-txt{
         label{
           font-size: 16px;
@@ -85,4 +85,44 @@
       text-decoration: underline;
     }
   }
+  .auth-features{
+    display: inline-block;
+    width: 380px;
+    font-size: 15px;
+    text-align: left;
+    color: $color-black;
+    ul{
+      border-left: 1px solid $color-grey;
+      margin-left: 25px;
+      padding-left: 25px;
+      li{
+        margin-bottom: 40px;
+        h2{
+          font-size: 17px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: $color-blue-hover;
+        }
+        span{
+          img{
+            float: left;
+          }
+        }
+        .auth-features-desc{
+          margin-left: 72px;
+          p{
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+  }
+  .auth-form-register, .auth-features{
+    vertical-align: middle;
+    margin-top: 55px;
+  }
+}
+
+.auth .auth-auth .auth-form, .auth .auth-auth .auth-form-register{
+  display: inline-block !important;
 }

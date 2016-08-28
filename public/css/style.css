@@ -307,7 +307,7 @@ header .header-menu-nav a {
   font-size: 20px;
 }
 
-.auth .auth-auth {
+.auth .auth-auth .auth-form, .auth .auth-auth .auth-form-register {
   background-color: white;
   border-radius: 3px;
   box-shadow: 0 1px 3px rgba(50, 50, 50, 0.08);
@@ -318,7 +318,7 @@ header .header-menu-nav a {
   padding: 20px 0;
 }
 
-.auth .auth-auth .auth-form .auth-txt label {
+.auth .auth-auth .auth-form .auth-txt label, .auth .auth-auth .auth-form-register .auth-txt label {
   font-size: 16px;
   color: #afafaf;
   float: left;
@@ -326,7 +326,7 @@ header .header-menu-nav a {
   padding: 0 15px;
 }
 
-.auth .auth-auth .auth-form .auth-txt input {
+.auth .auth-auth .auth-form .auth-txt input, .auth .auth-auth .auth-form-register .auth-txt input {
   border: 1px solid #e6e6e6;
   display: block;
   margin: 15px auto 25px;
@@ -335,19 +335,19 @@ header .header-menu-nav a {
   border-radius: 2px;
 }
 
-.auth .auth-auth .auth-form .auth-txt input:focus {
+.auth .auth-auth .auth-form .auth-txt input:focus, .auth .auth-auth .auth-form-register .auth-txt input:focus {
   border: 1px solid #1ca0e9;
 }
 
-.auth .auth-auth .auth-form .auth-txt input:focus label {
+.auth .auth-auth .auth-form .auth-txt input:focus label, .auth .auth-auth .auth-form-register .auth-txt input:focus label {
   color: grey;
 }
 
-.auth .auth-auth .auth-form .auth-checkbox {
+.auth .auth-auth .auth-form .auth-checkbox, .auth .auth-auth .auth-form-register .auth-checkbox {
   display: block;
 }
 
-.auth .auth-auth .auth-form .auth-checkbox label {
+.auth .auth-auth .auth-form .auth-checkbox label, .auth .auth-auth .auth-form-register .auth-checkbox label {
   color: #afafaf;
   display: block;
   float: left;
@@ -355,13 +355,13 @@ header .header-menu-nav a {
   padding-left: 8px;
 }
 
-.auth .auth-auth .auth-form .auth-checkbox::after {
+.auth .auth-auth .auth-form .auth-checkbox::after, .auth .auth-auth .auth-form-register .auth-checkbox::after {
   display: block;
   clear: both;
   content: "";
 }
 
-.auth .auth-auth .auth-form .auth-submit {
+.auth .auth-auth .auth-form .auth-submit, .auth .auth-auth .auth-form-register .auth-submit {
   background-color: #1ca0e9;
   border: medium none;
   border-radius: 2px;
@@ -376,7 +376,7 @@ header .header-menu-nav a {
   letter-spacing: 1px;
 }
 
-.auth .auth-auth .auth-form .auth-submit:hover {
+.auth .auth-auth .auth-form .auth-submit:hover, .auth .auth-auth .auth-form-register .auth-submit:hover {
   background-color: #0389cf;
 }
 
@@ -395,4 +395,50 @@ header .header-menu-nav a {
 .auth .auth-register a:hover {
   color: #0389cf;
   text-decoration: underline;
+}
+
+.auth .auth-features {
+  display: inline-block;
+  width: 380px;
+  font-size: 15px;
+  text-align: left;
+  color: #333;
+}
+
+.auth .auth-features ul {
+  border-left: 1px solid #afafaf;
+  margin-left: 25px;
+  padding-left: 25px;
+}
+
+.auth .auth-features ul li {
+  margin-bottom: 40px;
+}
+
+.auth .auth-features ul li h2 {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #0389cf;
+}
+
+.auth .auth-features ul li span img {
+  float: left;
+}
+
+.auth .auth-features ul li .auth-features-desc {
+  margin-left: 72px;
+}
+
+.auth .auth-features ul li .auth-features-desc p {
+  line-height: 1.2;
+}
+
+.auth .auth-form-register, .auth .auth-features {
+  vertical-align: middle;
+  margin-top: 55px;
+}
+
+.auth .auth-auth .auth-form, .auth .auth-auth .auth-form-register {
+  display: inline-block !important;
 }
