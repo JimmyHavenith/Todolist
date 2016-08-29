@@ -150,7 +150,7 @@ header .header-menu-nav a {
 }
 
 .lists .lists-lists .lists-add a {
-  color: #1ca0e9;
+  color: #3498db;
   border-top: 1px solid #e6e6e6;
 }
 
@@ -185,7 +185,7 @@ header .header-menu-nav a {
 }
 
 .tasks .tasks-tasks .task-add a {
-  background-color: #1ca0e9;
+  background-color: #3498db;
   color: white;
   border-radius: 2px;
   padding: 5px 8px;
@@ -323,7 +323,7 @@ header .header-menu-nav a {
 }
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-option .tasks-item-option-logo .blue {
-  background-color: #1ca0e9;
+  background-color: #3498db;
   display: inline-block;
   height: 13px;
   width: 13px;
@@ -347,7 +347,7 @@ header .header-menu-nav a {
 }
 
 .tasks .tasks-tasks .task-done-submit, .tasks .tasks-tasks .task-edit-form-submit {
-  background-color: #1ca0e9;
+  background-color: #3498db;
   border: medium none;
   color: white;
   font-size: 14px;
@@ -400,7 +400,7 @@ header .header-menu-nav a {
 }
 
 .auth .auth-auth .auth-form .auth-txt input:focus, .auth .auth-auth .auth-form-register .auth-txt input:focus {
-  border: 1px solid #1ca0e9;
+  border: 1px solid #3498db;
 }
 
 .auth .auth-auth .auth-form .auth-txt input:focus label, .auth .auth-auth .auth-form-register .auth-txt input:focus label {
@@ -426,7 +426,7 @@ header .header-menu-nav a {
 }
 
 .auth .auth-auth .auth-form .auth-submit, .auth .auth-auth .auth-form-register .auth-submit {
-  background-color: #1ca0e9;
+  background-color: #3498db;
   border: medium none;
   border-radius: 2px;
   color: white;
@@ -452,7 +452,7 @@ header .header-menu-nav a {
 }
 
 .auth .auth-register a {
-  color: #1ca0e9;
+  color: #3498db;
   text-decoration: none;
 }
 

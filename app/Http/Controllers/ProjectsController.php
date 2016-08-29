@@ -62,7 +62,7 @@ class ProjectsController extends Controller {
 		Project::create( $input );
 
 		flash('Projet ajouté', 'success');
-		return Redirect::route('projects.index', $project->slug);
+		return Redirect::route('projects.show', $project->slug);
 
 	}
 
