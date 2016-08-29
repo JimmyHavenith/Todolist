@@ -7,6 +7,6 @@
 
 <div>
   <div>
-	{{ Form::button('Créer le projet', array('class'=>'task-edit-form-submit', 'type'=>'submit')) }}
+	{{ Form::button('Modifier le projet', array('class'=>'task-edit-form-submit', 'type'=>'submit')) }}
   </div>
 </div>

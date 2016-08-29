@@ -37,14 +37,19 @@
         <div class="lists-inner">
           <div class="lists-scroll">
             <ul>
-              <li><a href="/today">Aujourd'hui</a></li>
-              <li><a href="/tomorrow">Demain</a></li>
-              <li><a href="#">Cette semaine</a></li>
+              <li><a href="/today"><img src="/img/icon-today.png" alt="" /><span>Aujourd'hui</span></a></li>
+              <li><a href="#"><img src="/img/icon-week.png" alt="" /><span>Cette semaine</span></a></li>
             </ul>
             <ul>
               <?php $categories = \Auth::user()->projects()->get(); ?>
               @foreach( $categories as $category)
-                <li><a href="{{ route('projects.show', $category->slug) }}">{{ $category->name }}</a></li>
+                <li>
+                  <a class="project-show" href="{{ route('projects.show', $category->slug) }}">
+                    <img src="/img/icon-project.png" alt="" />
+                    <span>{{ $category->name }}</span>
+                    <a class="icon-project-edit" href="{{ route('projects.edit', array($category->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
+                  </a>
+                </li>
               @endforeach
                 <li class="lists-add"><a href="{{ url('/projects/create') }}"><span>+</span>Créer un projet</a></li>
             </ul>
@@ -58,8 +63,6 @@
           @yield('mainContent')
       </div>
     </section>
-    <footer style="background-color: #222222;">
-    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>

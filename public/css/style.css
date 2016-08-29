@@ -65,7 +65,7 @@ body {
 }
 
 header {
-  background-color: #333;
+  background-color: #2c3e50;
   padding: 15px;
   height: 20px;
 }
@@ -92,8 +92,12 @@ header .header-menu-nav a {
 }
 
 .lists {
-  display: inline-block;
+  float: left;
   width: 20%;
+}
+
+.lists .lists-lists li {
+  position: relative;
 }
 
 .lists .lists-lists li a {
@@ -103,12 +107,46 @@ header .header-menu-nav a {
   text-decoration: none;
   border-top: 1px solid #f5f5f5;
   border-bottom: 1px solid #f5f5f5;
+  position: relative;
 }
 
 .lists .lists-lists li a:hover {
   background-color: white;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
+}
+
+.lists .lists-lists li span {
+  margin-left: 30px;
+}
+
+.lists .lists-lists li img {
+  position: absolute;
+  top: 14px;
+}
+
+.lists .lists-lists li .icon-project-edit {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent !important;
+}
+
+.lists .lists-lists li .icon-project-edit img {
+  position: static;
+}
+
+.lists .lists-lists li .icon-project-edit span {
+  display: none;
+}
+
+.lists .lists-lists li .project-show:hover + .icon-project-edit {
+  display: block !important;
+}
+
+.lists .lists-lists li .icon-project-edit:hover {
+  display: block;
 }
 
 .lists .lists-lists .lists-add a {
@@ -186,7 +224,7 @@ header .header-menu-nav a {
 }
 
 .tasks .tasks-tasks .task-add .task-add-submit {
-  background-color: #4bc800;
+  background-color: #1a8c8e;
   border: medium none;
   color: white;
   font-size: 14px;
@@ -197,7 +235,7 @@ header .header-menu-nav a {
 }
 
 .tasks .tasks-tasks .task-add .task-add-submit:hover {
-  background-color: #47be00;
+  background-color: #26b999;
 }
 
 .tasks .tasks-tasks .task-add .task-edit-form-label {
@@ -239,10 +277,11 @@ header .header-menu-nav a {
 
 .tasks .tasks-tasks ol .tasks-item {
   border-radius: 3px;
-  background-color: #f5f5f5;
+  background-color: #2c3e50;
   padding: 15px 0 15px 15px;
   margin-bottom: 15px;
   border: 1px solid #e6e6e6;
+  color: white;
 }
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-name {
@@ -252,6 +291,31 @@ header .header-menu-nav a {
 .tasks .tasks-tasks ol .tasks-item .tasks-item-button {
   float: right;
   margin-right: 15px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-button a {
+  margin-left: 8px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-infos {
+  display: none;
+  line-height: 1.2;
+  margin-left: 35px;
+  margin-top: 30px;
+  width: 60%;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-infos .tasks-item-infos-icon {
+  float: left;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-infos .tasks-item-infos-date {
+  margin-bottom: 15px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-item-infos .task-infos p {
+  font-size: 0.8em;
+  margin-left: 25px;
 }
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-option {
@@ -514,20 +578,6 @@ header .header-menu-nav a {
   width: 100%;
 }
 
-.home-banner .home-banner-txt .home-banner-txt-div {
-  left: 40%;
-  position: absolute;
-  top: 40%;
-  width: 30%;
-}
-
-.home-banner .home-banner-txt .home-banner-txt-div h2 {
-  color: white;
-  font-size: 45px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
 .home-banner-bg {
   background-color: rgba(0, 0, 0, 0.75);
   height: 100%;
@@ -535,6 +585,16 @@ header .header-menu-nav a {
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+.home-banner-bg h2 {
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: absolute;
+  top: 45%;
+  left: 40%;
 }
 
 .home-banner::after {
@@ -598,6 +658,7 @@ header .header-menu-nav a {
 
 .home-f .home-features-div .home-features-width .home-features-div-div .home-features-txt p {
   font-size: 1.1em;
+  line-height: 1.4;
 }
 
 .home-f .home-features-div .home-features-width .home-features-div-img {

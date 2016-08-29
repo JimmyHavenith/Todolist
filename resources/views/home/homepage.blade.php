@@ -5,12 +5,10 @@
     <div class="home-banner">
       <div class="home-banner-txt">
         <img src="../img/banner.png" alt="" />
-        <div class="home-banner-txt-div">
-          <h2>minimaList</h2>
-        </div>
       </div>
     </div>
     <div class="home-banner-bg">
+      <h2>minimaList</h2>
     </div>
   </section>
   <section class="home-a">
