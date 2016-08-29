@@ -96,6 +96,35 @@ header .header-menu-nav a {
   width: 20%;
 }
 
+.lists .lists-lists .lists-scroll-choice {
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+
+.lists .lists-lists .lists-scroll-choice li {
+  float: left;
+  width: 50%;
+}
+
+.lists .lists-lists .lists-scroll-choice li a {
+  background-color: transparent;
+  border-bottom: 1px solid #e6e6e6 !important;
+  text-align: center;
+}
+
+.lists .lists-lists .lists-scroll-choice li a:hover {
+  background-color: transparent !important;
+  border-top: none !important;
+  border-bottom: 1px solid #afafaf !important;
+  color: black;
+}
+
+.lists .lists-lists .lists-scroll-choice::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
 .lists .lists-lists li {
   position: relative;
 }
@@ -178,6 +207,10 @@ header .header-menu-nav a {
   margin-bottom: 15px;
 }
 
+.tasks .tasks-tasks .task-to-projet {
+  font-weight: normal;
+}
+
 .tasks .tasks-tasks .task-add {
   display: block;
   width: 100%;
@@ -244,6 +277,35 @@ header .header-menu-nav a {
 
 .tasks .tasks-tasks .task-add .task-edit-form-date {
   width: 85px;
+}
+
+.tasks .tasks-tasks .task-add .task-show {
+  margin-bottom: 30px;
+}
+
+.tasks .tasks-tasks .task-add .task-show h3 {
+  border-bottom: 1px solid #1a8c8e;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  color: #1a8c8e;
+}
+
+.tasks .tasks-tasks .task-add .task-show-edit a {
+  background-color: #3498db;
+  border: medium none;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 7px 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.tasks .tasks-tasks .task-add .task-show-edit a:hover {
+  background-color: #0389cf;
 }
 
 .tasks .tasks-tasks .task-add::after {

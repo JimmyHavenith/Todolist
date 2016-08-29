@@ -2,6 +2,30 @@
   float: left;
   width: 20%;
   .lists-lists{
+    .lists-scroll-choice{
+      margin-top: 15px;
+      padding-bottom: 10px;
+      li{
+        float: left;
+        width: 50%;
+        a{
+          background-color: transparent;
+          border-bottom: 1px solid $color-border !important;
+          text-align: center;
+        }
+        a:hover{
+          background-color: transparent !important;
+          border-top: none !important;
+          border-bottom: 1px solid $color-grey !important;
+          color: black;
+        }
+      }
+    }
+    .lists-scroll-choice::after{
+      display: block;
+      clear: both;
+      content: "";
+    }
     li{
       position: relative;
       a{

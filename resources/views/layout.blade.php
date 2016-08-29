@@ -40,6 +40,12 @@
               <li><a href="/today"><img src="/img/icon-today.png" alt="" /><span>Aujourd'hui</span></a></li>
               <li><a href="#"><img src="/img/icon-week.png" alt="" /><span>Cette semaine</span></a></li>
             </ul>
+            <div class="lists-scroll-choice">
+              <ul>
+                <li><a href="#">Projets</a></li>
+                <li><a href="#">Étiquettes</a></li>
+              </ul>
+            </div>
             <ul>
               <?php $categories = \Auth::user()->projects()->get(); ?>
               @foreach( $categories as $category)
