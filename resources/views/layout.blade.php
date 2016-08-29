@@ -2,10 +2,11 @@
 <html lang="fr-BE">
   <head>
     <meta charset="utf-8">
-
     <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <title>Todolist | @yield('title')</title>
   </head>
   <body id="app-layout">
@@ -69,14 +70,17 @@
           @yield('mainContent')
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
     <script>
-    $(function() {
-      $( "#datepicker" ).datepicker();
-    });
+    $( function() {
+      $( "#datepicker" ).datepicker( $.datepicker.regional[ "fr" ] );
+      $( "#locale" ).on( "change", function() {
+        $( "#datepicker" ).datepicker( "option",
+          $.datepicker.regional[ $( this ).val() ] );
+      });
+    } );
     </script>
   </body>
 </html>
