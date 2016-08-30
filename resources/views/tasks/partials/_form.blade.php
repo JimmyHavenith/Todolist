@@ -20,6 +20,29 @@
 </div>
 
 <div>
+	@if( count($tags) )
+		{{ Form::label('tag', 'Etiquette', ['class' => 'task-edit-form-label']) }}
+		<div>
+			<select class="" name="tag">
+				<option value="0">aucun tag</option>
+					@foreach( $tags as $tag )
+						@if( $task->tag_id == $tag->id )
+							<option value="{{ $tag->id }}" selected="selected">{{ $tag->name }}</option>
+							@else
+							<option value="{{ $tag->id }}">{{ $tag->name }}</option>
+						@endif
+					@endforeach
+			</select>
+		</div>
+	@else
+		<p>
+			Pas d'étiquettes existantes
+		</p>
+	@endif
+</div>
+
+
+<div>
   <div>
 	   {{ Form::button('Modifier la tâche', array('class' => 'task-edit-form-submit', 'type'=>'submit')) }}
   </div>

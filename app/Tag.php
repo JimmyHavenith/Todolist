@@ -4,22 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class Tag extends Model
 {
   protected $guarded = [];
 
-  public function project()
+  public function tasks()
   {
-    return $this->belongsTo('App\Project');
-  }
-
-  public function tag()
-  {
-    return $this->belongsTo('App\Tag');
+    return $this->hasMany('App\Task');
   }
 
   public function user()
   {
     return $this->belongsTo('App\User');
   }
+
 }

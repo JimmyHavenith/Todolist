@@ -43,23 +43,42 @@
             </ul>
             <div class="lists-scroll-choice">
               <ul>
-                <li><a href="#">Projets</a></li>
-                <li><a href="#">Étiquettes</a></li>
+                <li><a href="/projects">Projets</a></li>
+                <li><a href="/tags">Étiquettes</a></li>
               </ul>
             </div>
-            <ul>
-              <?php $categories = \Auth::user()->projects()->get(); ?>
-              @foreach( $categories as $category)
-                <li>
-                  <a class="project-show" href="{{ route('projects.show', $category->slug) }}">
-                    <img src="/img/icon-project.png" alt="" />
-                    <span>{{ $category->name }}</span>
-                    <a class="icon-project-edit" href="{{ route('projects.edit', array($category->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
-                  </a>
-                </li>
-              @endforeach
-                <li class="lists-add"><a href="{{ url('/projects/create') }}"><span>+</span>Créer un projet</a></li>
-            </ul>
+            <?php
+            $urlParts = explode('/', Request::url());
+            ?>
+            @if( $urlParts[3] != 'tags' )
+              <ul>
+                <?php $categories = \Auth::user()->projects()->get(); ?>
+                @foreach( $categories as $category)
+                  <li>
+                    <a class="project-show" href="{{ route('projects.show', $category->slug) }}">
+                      <img src="/img/icon-project.png" alt="" />
+                      <span>{{ $category->name }}</span>
+                      <a class="icon-project-edit" href="{{ route('projects.edit', array($category->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
+                    </a>
+                  </li>
+                @endforeach
+                  <li class="lists-add"><a href="{{ url('/projects/create') }}"><span>+</span>Créer un projet</a></li>
+              </ul>
+            @else
+              <ul>
+                <?php $etiquettes = \Auth::user()->tags()->get(); ?>
+                @foreach( $etiquettes as $etiquette)
+                  <li>
+                    <a class="project-show" href="{{ route('tags.show', $etiquette->slug) }}">
+                      <img src="/img/icon-project.png" alt="" />
+                      <span>{{ $etiquette->name }}</span>
+                      <a class="icon-project-edit" href="{{ route('tags.edit', array($etiquette->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
+                    </a>
+                  </li>
+                @endforeach
+                  <li class="lists-add"><a href="{{ url('/tags/create') }}"><span>+</span>Créer une étiquette</a></li>
+              </ul>
+            @endif
           </div>
         </div>
       </div>

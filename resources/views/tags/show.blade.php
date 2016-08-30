@@ -1,33 +1,27 @@
 @extends('layout')
 
 @section('mainContent')
-  <h2>{{ $project->name }}</h2>
-  <div class="task-add">
-    {!! Form::model(new App\Task, ['route' => ['projects.tasks.store', $project->slug], 'role' => 'form']) !!}
-      <input type="text" name="name" placeholder="Ajouter une tâche" class="task-add-form">
-      {{ Form::button('Ajouter', array('type'=>'submit', 'class'=>'task-add-submit')) }}
-    {!! Form::close() !!}
-  </div>
+  <h2>{{ $tag->name }}</h2>
 
   {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form']) !!}
-    <input type="hidden" name="project" value="{{ $project->id }}">
+    <input type="hidden" name="project" value="{{ $tag->id }}">
     <ol>
-      @foreach( $project->tasks as $task )
+      @foreach( $tag->tasks as $task )
         @if( $task->completed == 0 )
           <li class="tasks-item">
             <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}"><span class="tasks-item-name">{{ $task->name }}</span>
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
             <div class="tasks-item-button">
-              <a title="voir la tâche" class="tasks-item-option" href="{{ route('projects.tasks.show', array($project->slug, $task->slug)) }}">
+              <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">
                 <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
               </a>
-              <a title="editer la tâche" class="tasks-item-option" href="{{ route('projects.tasks.edit', array($project->slug, $task->slug)) }}">
+              <a title="editer la tâche" class="tasks-item-option" href="{{ route('tags.tasks.edit', array($tag->slug, $task->slug)) }}">
                 <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
               </a>
               <a title="Supprimer la tâche" class="tasks-item-option" href="">
                 <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
               </a>
-              <!-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.tasks.destroy', $project->slug, $task->slug))) !!}
+              <!-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('tags.tasks.destroy', $tag->slug, $task->slug))) !!}
               {{Form::button('<span class="task-item-option">Supprimer la tâche</span>', array('type' => 'submit'))}}
               {!! Form::close() !!} -->
             </div>
@@ -67,24 +61,24 @@
     </ol>
 
     <h3 class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></h3>
-    <input type="hidden" name="project" value="{{ $project->id }}">
+    <input type="hidden" name="project" value="{{ $tag->id }}">
     <ol>
-      @foreach( $project->tasks as $task )
+      @foreach( $tag->tasks as $task )
         @if( $task->completed == 1 )
           <li class="tasks-item">
             <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked" class="completed"><span class="tasks-item-name">{{ $task->name }}</span>
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
           <div class="tasks-item-button">
-            <a title="voir la tâche" class="tasks-item-option" href="{{ route('projects.tasks.show', array($project->slug, $task->slug)) }}">
+            <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">
               <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
             </a>
-            <a title="editer la tâche" class="tasks-item-option" href="{{ route('projects.tasks.edit', array($project->slug, $task->slug)) }}">
+            <a title="editer la tâche" class="tasks-item-option" href="{{ route('tags.tasks.edit', array($tag->slug, $task->slug)) }}">
               <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
             </a>
-            <a title="Supprimer la tâche" class="tasks-item-option" href="{{ route('projects.tasks.destroy', array($project->slug, $task->slug)) }}">
+            <a title="Supprimer la tâche" class="tasks-item-option" href="{{ route('tags.tasks.destroy', array($tag->slug, $task->slug)) }}">
               <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="" /></span><span class="tasks-item-option-txt">Supprimer la Tâche</span>
             </a>
-            <!-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.tasks.destroy', $project->slug, $task->slug))) !!}
+            <!-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('tags.tasks.destroy', $tag->slug, $task->slug))) !!}
             {{Form::button('<span class="task-item-option">Supprimer la tâche</span>', array('type' => 'submit'))}}
             {!! Form::close() !!} -->
             </div>

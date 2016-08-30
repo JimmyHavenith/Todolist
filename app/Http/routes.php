@@ -33,6 +33,7 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 /* Project & tasks */
 Route::model('tasks', 'Task');
 Route::model('projects', 'Project');
+Route::model('tags', 'Tag');
 
 Route::bind('tasks', function($value, $route) {
   return App\Task::whereSlug($value)->first();
@@ -42,8 +43,15 @@ Route::bind('projects', function($value, $route) {
   return App\Project::whereSlug($value)->first();
 });
 
+Route::bind('tags', function($value, $route) {
+  return App\Tag::whereSlug($value)->first();
+});
+
 Route::resource('projects', 'ProjectsController');
 Route::resource('projects.tasks', 'TasksController');
+
+Route::resource('tags', 'TagsController');
+Route::resource('tags.tasks', 'TasksController');
 
 Route::get('today', ['as' => 'today', 'uses' => 'TasksController@today']);
 Route::get('tomorrow', ['as' => 'tomorrow', 'uses' => 'TasksController@tomorrow']);

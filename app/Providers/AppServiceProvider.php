@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Project;
+use App\Tag;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->share('categories', Project::all());
+        view()->share('etiquettes', Tag::all());
     }
 
     /**

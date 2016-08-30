@@ -4,6 +4,7 @@ use Input;
 use Redirect;
 use App\Project;
 use App\Task;
+use App\Tag;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -86,7 +87,8 @@ class TasksController extends Controller {
 	 */
 	public function edit(Project $project, Task $task)
 	{
-		return view('tasks.edit', compact('project', 'task'));
+		$tags = Tag::all();
+		return view('tasks.edit', compact('project', 'task', 'tags'));
 	}
 
 	/**
@@ -118,7 +120,6 @@ class TasksController extends Controller {
 	public function destroy(Project $project, Task $task)
 	{
 		$task->delete();
-
 		flash('Tâche supprimée', 'success');
 		return Redirect::route('projects.show', $project->slug);
 	}
@@ -197,11 +198,14 @@ class TasksController extends Controller {
 			$task->save();
 		}
 
-		foreach($input['task-check'] as $value)
+		if( isset($input['task-check']) )
 		{
-			$task = Task::findOrFail($value);
-			$task->completed = 1;
-			$task->save();
+			foreach($input['task-check'] as $value)
+			{
+				$task = Task::findOrFail($value);
+				$task->completed = 1;
+				$task->save();
+			}
 		}
 
 		return redirect()->back();

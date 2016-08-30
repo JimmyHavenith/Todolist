@@ -2,13 +2,13 @@
 
 use Input;
 use Redirect;
-use App\Project;
+use App\Tag;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Flash;
 use Illuminate\Http\Request;
 
-class ProjectsController extends Controller {
+class TagsController extends Controller {
 
 	protected $rules = [
 		'name' => ['required', 'min:3'],
@@ -25,22 +25,21 @@ class ProjectsController extends Controller {
 	 		$this->middleware('auth');
 	 }
 
-	public function index(Project $project)
+	public function index(Tag $tag)
 	{
 		if(\Auth::check()){
 
-			if( count($project) ) {
-				$project = $project->first();
+			if( count($tag) ) {
+				$tag = $tag->first();
 			} else {
-				$project = null;
+				$tag = null;
 			}
 
-			return view('projects.show', compact('project'));
+			return view('tags.show', compact('tag'));
 
 		}else{
 			return view('auth/login');
 		}
-
 	}
 
 	/**
@@ -50,7 +49,7 @@ class ProjectsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('projects.create');
+		return view('tags.create');
 	}
 
 	/**
@@ -59,17 +58,17 @@ class ProjectsController extends Controller {
 	 * @return Response
 	 */
 
-	public function store(Request $request, Project $project)
+	public function store(Request $request, Tag $tag)
 	{
 		$this->validate($request, $this->rules);
 
 		$input = Input::all();
 		$input['user_id'] = \Auth::id();
-		$input['slug'] = str_slug( $input['name'], '-');
-		Project::create( $input );
+		$slug = $input['slug'] = str_slug( $input['name'], '-');
+		Tag::create( $input );
 
 		flash('Projet ajouté', 'success');
-		return Redirect::route('projects.show', $project->slug);
+		return Redirect::route('tags.show', $slug);
 
 	}
 
@@ -80,9 +79,9 @@ class ProjectsController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function show(Project $project)
+	public function show(Tag $tag)
 	{
-		return view('projects.show', compact('project'));
+		return view('tags.show', compact('tag'));
 	}
 
 	/**
@@ -91,9 +90,9 @@ class ProjectsController extends Controller {
 	 * @param  \App\Project $project
 	 * @return Response
 	 */
-	public function edit(Project $project)
+	public function edit(Tag $tag)
 	{
-		return view('projects.edit', compact('project'));
+		return view('tags.edit', compact('tag'));
 	}
 
 	/**
@@ -103,15 +102,15 @@ class ProjectsController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function update(Project $project, Request $request)
+	public function update(Tag $tag, Request $request)
 	{
 		$this->validate($request, $this->rules);
 
 		$input = array_except(Input::all(), '_method');
-		$project->update($input);
+		$tag->update($input);
 
 		flash('Projet modifié', 'success');
-		return Redirect::route('projects.show', $project->slug);
+		return Redirect::route('tags.show', $tag->slug);
 	}
 
 	/**
@@ -120,12 +119,12 @@ class ProjectsController extends Controller {
 	 * @param  \App\Project $project
 	 * @return Response
 	 */
-	public function destroy(Project $project)
+	public function destroy(Tag $tag)
 	{
-		$project->delete();
+		$tag->delete();
 
 		flash('Projet supprimé', 'success');
-		return Redirect::route('projects.index');
+		return Redirect::route('tags.index');
 	}
 
 }
