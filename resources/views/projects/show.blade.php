@@ -16,6 +16,7 @@
         @if( $task->completed == 0 )
           <li class="tasks-item">
             <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}"><span class="tasks-item-name">{{ $task->name }}</span>
+            <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
             <div class="tasks-item-button">
               <a title="voir la tâche" class="tasks-item-option" href="{{ route('projects.tasks.show', array($project->slug, $task->slug)) }}">
                 <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
@@ -64,18 +65,15 @@
         @endif
       @endforeach
     </ol>
-    {{ Form::button('Valider', array('class'=>'task-done-submit', 'type'=>'submit')) }}
-  {!! Form::close() !!}
 
-  <h3 class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></h3>
-  {!! Form::model(new App\Task, ['route' => ['uncheck'], 'role' => 'form']) !!}
+    <h3 class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></h3>
     <input type="hidden" name="project" value="{{ $project->id }}">
     <ol>
       @foreach( $project->tasks as $task )
         @if( $task->completed == 1 )
           <li class="tasks-item">
             <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked" class="completed"><span class="tasks-item-name">{{ $task->name }}</span>
-            <input type="hidden" name="task-uncheck[]" value="{{ $task->id }}">
+            <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
           <div class="tasks-item-button">
             <a title="voir la tâche" class="tasks-item-option" href="{{ route('projects.tasks.show', array($project->slug, $task->slug)) }}">
               <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>

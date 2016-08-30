@@ -189,37 +189,19 @@ class TasksController extends Controller {
 	public function check()
 	{
 		$input = Input::all();
+
+		foreach($input['all-tasks'] as $value)
+		{
+			$task = Task::findOrFail($value);
+			$task->completed = 0;
+			$task->save();
+		}
+
 		foreach($input['task-check'] as $value)
 		{
 			$task = Task::findOrFail($value);
 			$task->completed = 1;
 			$task->save();
-		}
-
-		return redirect()->back();
-	}
-
-	public function uncheck()
-	{
-		$input = Input::all();
-		$uncheck = $input['task-uncheck'];
-		$check = !empty($input['task-check']) ? $input['task-check'] : null;
-		if( $check == null ) {
-			foreach($uncheck as $value)
-			{
-					$task = Task::findOrFail($value);
-					$task->completed = 0;
-					$task->save();
-			}
-		} else {
-			foreach($uncheck as $value)
-			{
-				if ( !in_array( $value, $check ) ) {
-					$task = Task::findOrFail($value);
-					$task->completed = 0;
-					$task->save();
-				}
-			}
 		}
 
 		return redirect()->back();
