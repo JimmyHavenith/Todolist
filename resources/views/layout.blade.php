@@ -39,7 +39,7 @@
           <div class="lists-scroll">
             <ul>
               <li><a href="/today"><img src="/img/icon-today.png" alt="" /><span>Aujourd'hui</span></a></li>
-              <li><a href="#"><img src="/img/icon-week.png" alt="" /><span>Cette semaine</span></a></li>
+              <li><a href="/tomorrow"><img src="/img/icon-week.png" alt="" /><span>Demain</span></a></li>
             </ul>
             <div class="lists-scroll-choice">
               <ul>
@@ -54,11 +54,11 @@
               <ul>
                 <?php $categories = \Auth::user()->projects()->get(); ?>
                 @foreach( $categories as $category)
-                  <li>
-                    <a class="project-show" href="{{ route('projects.show', $category->slug) }}">
+                  <li id="{{ $category->id }}">
+                    <a class="project-show project-name-change" href="{{ route('projects.show', $category->slug) }}">
                       <img src="/img/icon-project.png" alt="" />
-                      <span>{{ $category->name }}</span>
-                      <a class="icon-project-edit" href="{{ route('projects.edit', array($category->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
+                      <span class="project-name-change-content">{{ $category->name }}</span>
+                      <a class="icon-project-edit project-name-change-icon" href="{{ route('projects.edit', array($category->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
                     </a>
                   </li>
                 @endforeach

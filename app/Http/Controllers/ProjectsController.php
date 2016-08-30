@@ -128,4 +128,12 @@ class ProjectsController extends Controller {
 		return Redirect::route('projects.index');
 	}
 
+	public function projectsName( $id )
+	{
+		$project = Project::findOrFail($id);
+		$text = Input::get('text');
+		$project->name = $text;
+		$project->save();
+	}
+
 }

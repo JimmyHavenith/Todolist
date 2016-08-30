@@ -23,7 +23,7 @@
 	@if( count($tags) )
 		{{ Form::label('tag', 'Etiquette', ['class' => 'task-edit-form-label']) }}
 		<div>
-			<select class="" name="tag">
+			<select class="" name="tag_id">
 				<option value="0">aucun tag</option>
 					@foreach( $tags as $tag )
 						@if( $task->tag_id == $tag->id )

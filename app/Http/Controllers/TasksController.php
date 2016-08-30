@@ -99,7 +99,7 @@ class TasksController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function update(Project $project, Task $task, Request $request)
+	public function update(Project $project, Task $task, Request $request, Tag $tag)
 	{
 		$this->validate($request, $this->rules);
 
@@ -117,11 +117,14 @@ class TasksController extends Controller {
 	 * @param  \App\Task    $task
 	 * @return Response
 	 */
-	public function destroy(Project $project, Task $task)
+	public function destroy($id, Project $project, $ajax = null)
 	{
+		$task = Task::findOrFail($id);
 		$task->delete();
 		flash('Tâche supprimée', 'success');
-		return Redirect::route('projects.show', $project->slug);
+		if( $ajax == null ){
+			return Redirect::route('projects.show', $project->slug);
+		}
 	}
 
 	public function today(Project $project)
@@ -169,7 +172,7 @@ class TasksController extends Controller {
 			$m = substr($task->date, 0, 2);
 			$d = substr($task->date, 3, 2);
 			$y = substr($task->date, 6, 4);
-			$newdate = Carbon::create($y, $m, $d);
+			$newdate = Carbon::create($y, $m, $d, 0, 0, 0);
 			if ($newdate == $tomorrow)
 			{
 				$tomorrowTasks[] = $task;
@@ -183,7 +186,6 @@ class TasksController extends Controller {
 				$tomorrowProject[] = $task->project_id;
 			}
 		}
-
 		return view('tasks.tomorrow', compact('project', 'tomorrowTasks', 'tomorrowProject'));
 	}
 
@@ -209,6 +211,33 @@ class TasksController extends Controller {
 		}
 
 		return redirect()->back();
+	}
+
+	public function checkSingle($id)
+	{
+
+		$task = Task::findOrFail($id);
+		$task->completed = 1;
+		$task->save();
+
+	}
+
+	public function uncheckSingle($id)
+	{
+
+		$task = Task::findOrFail($id);
+		$task->completed = 0;
+		$task->save();
+
+	}
+
+	public function tasksName($id)
+	{
+		$task = Task::findOrFail($id);
+		$text = Input::get('text');
+		$task->name = $text;
+		$task->save();
+
 	}
 
 }
