@@ -54,6 +54,7 @@ Route::resource('tags', 'TagsController');
 Route::resource('tags.tasks', 'TasksController');
 
 Route::get('tasks/delete/{id}/{ajax?}', ['as' => 'deleteTask', 'uses' => 'TasksController@destroy']);
+Route::get('projects/delete/{id}/{ajax?}', ['as' => 'deleteProject', 'uses' => 'ProjectsController@destroy']);
 
 
 Route::get('today', ['as' => 'today', 'uses' => 'TasksController@today']);

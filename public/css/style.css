@@ -81,7 +81,7 @@ table {
 }
 
 .default .tasks-item {
-  background-color: #2c3e50;
+  background-color: #3e5771;
 }
 
 .default .auth-options {
@@ -92,12 +92,28 @@ table {
   background-color: #233140;
 }
 
+.default .project-add-submit {
+  background-color: #2c3e50;
+}
+
+.default .project-add-submit:hover {
+  background-color: #233140;
+}
+
+.default .task-add-submit {
+  background-color: #2c3e50;
+}
+
+.default .task-add-submit:hover {
+  background-color: #233140;
+}
+
 .color_1 .header {
   background-color: #2c3e50;
 }
 
 .color_1 .tasks-item {
-  background-color: #2c3e50;
+  background-color: #3e5771;
 }
 
 .color_1 .auth-options {
@@ -108,12 +124,28 @@ table {
   background-color: #233140;
 }
 
+.color_1 .project-add-submit {
+  background-color: #2c3e50;
+}
+
+.color_1 .project-add-submit:hover {
+  background-color: #233140;
+}
+
+.color_1 .task-add-submit {
+  background-color: #2c3e50;
+}
+
+.color_1 .task-add-submit:hover {
+  background-color: #233140;
+}
+
 .color_2 .header {
   background-color: #1a8c8e;
 }
 
 .color_2 .tasks-item {
-  background-color: #1a8c8e;
+  background-color: #22b6b9;
 }
 
 .color_2 .auth-options {
@@ -124,12 +156,28 @@ table {
   background-color: #167778;
 }
 
+.color_2 .project-add-submit {
+  background-color: #1a8c8e;
+}
+
+.color_2 .project-add-submit:hover {
+  background-color: #167778;
+}
+
+.color_2 .task-add-submit {
+  background-color: #1a8c8e;
+}
+
+.color_2 .task-add-submit:hover {
+  background-color: #167778;
+}
+
 .color_3 .header {
   background-color: #e65a3a;
 }
 
 .color_3 .tasks-item {
-  background-color: #e65a3a;
+  background-color: #ec8067;
 }
 
 .color_3 .auth-options {
@@ -140,12 +188,28 @@ table {
   background-color: #e34723;
 }
 
+.color_3 .project-add-submit {
+  background-color: #e65a3a;
+}
+
+.color_3 .project-add-submit:hover {
+  background-color: #e34723;
+}
+
+.color_3 .task-add-submit {
+  background-color: #e65a3a;
+}
+
+.color_3 .task-add-submit:hover {
+  background-color: #e34723;
+}
+
 .color_4 .header {
   background-color: #a05663;
 }
 
 .color_4 .tasks-item {
-  background-color: #a05663;
+  background-color: #b57480;
 }
 
 .color_4 .auth-options {
@@ -156,12 +220,28 @@ table {
   background-color: #8f4d59;
 }
 
+.color_4 .project-add-submit {
+  background-color: #a05663;
+}
+
+.color_4 .project-add-submit:hover {
+  background-color: #8f4d59;
+}
+
+.color_4 .task-add-submit {
+  background-color: #a05663;
+}
+
+.color_4 .task-add-submit:hover {
+  background-color: #8f4d59;
+}
+
 .color_5 .header {
   background-color: #81bcb8;
 }
 
 .color_5 .tasks-item {
-  background-color: #81bcb8;
+  background-color: #a2cecb;
 }
 
 .color_5 .auth-options {
@@ -172,12 +252,28 @@ table {
   background-color: #70b3af;
 }
 
+.color_5 .project-add-submit {
+  background-color: #81bcb8;
+}
+
+.color_5 .project-add-submit:hover {
+  background-color: #70b3af;
+}
+
+.color_5 .task-add-submit {
+  background-color: #81bcb8;
+}
+
+.color_5 .task-add-submit:hover {
+  background-color: #70b3af;
+}
+
 .color_6 .header {
   background-color: #f0ad4e;
 }
 
 .color_6 .tasks-item {
-  background-color: #f0ad4e;
+  background-color: #f4c37d;
 }
 
 .color_6 .auth-options {
@@ -185,6 +281,22 @@ table {
 }
 
 .color_6 .auth-options li a:hover {
+  background-color: #eea236;
+}
+
+.color_6 .project-add-submit {
+  background-color: #f0ad4e;
+}
+
+.color_6 .project-add-submit:hover {
+  background-color: #eea236;
+}
+
+.color_6 .task-add-submit {
+  background-color: #f0ad4e;
+}
+
+.color_6 .task-add-submit:hover {
   background-color: #eea236;
 }
 
@@ -266,6 +378,28 @@ header .header-menu-nav a {
 .lists {
   float: left;
   width: 20%;
+}
+
+.lists .lists-scroll form {
+  margin-top: 35px;
+}
+
+.lists .add-project-form {
+  float: left;
+  font-size: 16px;
+  padding: 15px;
+  width: 65%;
+  border: 1px solid #e6e6e6;
+}
+
+.lists .project-add-submit {
+  border: 0 solid transparent;
+  color: white;
+  float: lf;
+  font-weight: bold;
+  padding: 17px 13px;
+  width: 78px;
+  cursor: pointer;
 }
 
 .lists .lists-lists .lists-scroll-choice {
@@ -455,7 +589,6 @@ header .header-menu-nav a {
 }
 
 .tasks .tasks-tasks .task-add .task-add-submit {
-  background-color: #1a8c8e;
   border: medium none;
   border-radius: 0 2px 2px 0;
   color: white;
@@ -464,10 +597,6 @@ header .header-menu-nav a {
   font-weight: bold;
   padding: 13px 20px;
   width: 11%;
-}
-
-.tasks .tasks-tasks .task-add .task-add-submit:hover {
-  background-color: #26b999;
 }
 
 .tasks .tasks-tasks .task-add .task-edit-form-label {

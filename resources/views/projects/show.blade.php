@@ -40,7 +40,7 @@
                       @if( $task->date )
                         {{ $task->date }}
                       @else
-                        Ajouter une échéance
+                        Il n'y a pas d'échéance
                       @endif
                     </p>
                   </div>
@@ -56,7 +56,7 @@
                     @if( $task->description )
                       {{ $task->description }}
                     @else
-                      Ajouter une description
+                      Il n'y a pas de description
                     @endif
                     </p>
                   </div>
@@ -98,7 +98,7 @@
                       @if( $task->date )
                         {{ $task->date }}
                       @else
-                        Ajouter une échéance
+                        Il n'y a pas d'échéance
                       @endif
                     </p>
                   </div>
@@ -112,7 +112,7 @@
                       @if( $task->description )
                         {{ $task->description }}
                       @else
-                        Ajouter une description
+                        Il n'y a pas de description
                       @endif
                     </p>
                   </div>

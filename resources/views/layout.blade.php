@@ -68,10 +68,14 @@
                       <img src="/img/icon-project.png" alt="" />
                       <span class="project-name-change-content">{{ $category->name }}</span>
                       <a class="icon-project-edit project-name-change-icon" href="{{ route('projects.edit', array($category->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
+                      <a class="icon-project-delete" href="{{ action('ProjectsController@destroy', ['id' => $category->id]) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Supprimer</span></a>
                     </a>
                   </li>
                 @endforeach
-                  <li class="lists-add"><a href="{{ url('/projects/create') }}"><span>+</span>Créer un projet</a></li>
+                {!! Form::model(new App\Project, array('route' => ['projects.store'], 'role' => 'form')) !!}
+                <input type="text" name="name" placeholder="+ Créer un projet" class="add-project-form">
+                  {{ Form::button('Créer', array('type'=>'submit', 'class'=>'project-add-submit')) }}
+                {!! Form::close() !!}
               </ul>
             @else
               <ul>

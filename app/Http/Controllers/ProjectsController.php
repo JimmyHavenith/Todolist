@@ -120,12 +120,20 @@ class ProjectsController extends Controller {
 	 * @param  \App\Project $project
 	 * @return Response
 	 */
-	public function destroy(Project $project)
+	public function destroy($id, Project $project, $ajax = null)
 	{
-		$project->delete();
 
-		flash('Projet supprimé', 'success');
-		return Redirect::route('projects.index');
+		$project = Project::findOrFail($id);
+		$project->delete();
+		flash('Tâche supprimée', 'success');
+		if( $ajax == null ){
+			if( count($project) ) {
+				$project = $project->first();
+			} else {
+				$project = null;
+			}
+			return view('projects.show', compact('project'));
+		}
 	}
 
 	public function projectsName( $id )

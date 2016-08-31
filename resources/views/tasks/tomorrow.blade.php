@@ -2,31 +2,65 @@
 @section('title', 'Demain' )
 @section('mainContent')
   <h2>Demain</h2>
-  @foreach( $project as $value )
-    @if ( in_array( $value->id, $tomorrowProject) )
-      <h3><a href="#">{{ $value->name }}</a></h3>
-      <ol>
-        @foreach( $tomorrowTasks as $task )
-          @if( $task->project_id == $value->id )
-            <li>
-              <div class="tasks-item">
-                <label><input type="checkbox" id="cbox1" value="premiere_checkbox"><span class="tasks-item-name">{{ $task->name }}</span></label>
-                <div class="tasks-item-button">
-                  <a title="voir la tâche" class="tasks-item-option" href="{{ route('projects.tasks.show', [$value->slug, $task->slug]) }}">
-                    <span class="tasks-item-option-logo"><div class="blue"></div></span><span class="tasks-item-option-txt">Voir la Tâche</span>
-                  </a>
-                  <a title="editer la tâche" class="tasks-item-option" href="{{ route('projects.tasks.edit', array($value->slug, $task->slug)) }}">
-                    <span class="tasks-item-option-logo"><div class="orange"></div></span><span class="tasks-item-option-txt">Editer la Tâche</span>
-                  </a>
-                  <!-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('projects.tasks.destroy', $value->slug, $task->slug))) !!}
-                  {{Form::button('<span class="task-item-option">Supprimer la tâche</span>', array('type' => 'submit'))}}
-                  {!! Form::close() !!} -->
+  @if( !empty($tomorrowTasks) )
+    @foreach( $project as $value )
+      @if ( in_array( $value->id, $tomorrowProject) )
+        <h3>{{ $value->name }}</h3>
+        <ol>
+          @foreach( $tomorrowTasks as $task )
+            @if( $task->project_id == $value->id )
+              <li>
+                <div class="tasks-item">
+                  <label><input type="checkbox" id="cbox1" value="premiere_checkbox"><span class="tasks-item-name">{{ $task->name }}</span></label>
+                  <div class="tasks-item-button">
+                    <a title="voir la tâche" class="tasks-item-option task-item-see" href="{{ route('projects.tasks.show', array($value->slug, $task->slug)) }}">
+                      <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
+                    </a>
+                    <a title="editer la tâche" class="tasks-item-option" href="{{ route('projects.tasks.edit', array($value->slug, $task->slug)) }}">
+                      <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
+                    </a>
+                    <a title="Supprimer la tâche" class="tasks-item-option task-item-delete" href="{{ action('TasksController@destroy', ['id' => $task->id]) }}">
+                      <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="" /></span><span class="tasks-item-option-txt">Supprimer la Tâche</span>
+                    </a>
+                  </div>
+                  <div class="tasks-item-infos">
+                    <div class="tasks-item-infos-date">
+                      <span class="tasks-item-infos-icon">
+                          <img src="../img/icon-date.png" alt="" />
+                      </span>
+                      <div class="task-infos">
+                        <p>
+                          @if( $task->date )
+                            {{ $task->date }}
+                          @else
+                            Il n'y a pas d'échéance
+                          @endif
+                        </p>
+                      </div>
+                    </div>
+                    <div class="tasks-item-infos-desc">
+                      <span class="tasks-item-infos-icon">
+                        <img src="../img/icon-desc.png" alt="" />
+                      </span>
+                      <div class="task-infos">
+                        <p>
+                          @if( $task->description )
+                            {{ $task->description }}
+                          @else
+                            Il n'y a pas de description
+                          @endif
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
-          @endif
-        @endforeach
-      </ol>
-    @endif
-  @endforeach
+              </li>
+            @endif
+          @endforeach
+        </ol>
+      @endif
+    @endforeach
+  @else
+    <h2>Il n'y a pas de tâches à faire pour demain</h2>
+  @endif
 @endsection

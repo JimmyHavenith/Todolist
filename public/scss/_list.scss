@@ -1,6 +1,25 @@
 .lists{
   float: left;
   width: 20%;
+  .lists-scroll form {
+    margin-top: 35px;
+  }
+  .add-project-form {
+    float: left;
+    font-size: 16px;
+    padding: 15px;
+    width: 65%;
+    border: 1px solid $color-border;
+  }
+  .project-add-submit {
+    border: 0 solid transparent;
+    color: white;
+    float: lf;
+    font-weight: bold;
+    padding: 17px 13px;
+    width: 78px;
+    cursor: pointer;
+  }
   .lists-lists{
     .lists-scroll-choice{
       margin-top: 15px;

@@ -67,7 +67,6 @@
         border: 1px solid grey;
       }
       .task-add-submit{
-        background-color: $color-greeen;
         border: medium none;
         border-radius: 0 2px 2px 0;
         color: white;
@@ -76,9 +75,6 @@
         font-weight: bold;
         padding: 13px 20px;
         width: 11%;
-      }
-      .task-add-submit:hover{
-        background-color: $color-greeen-clear;
       }
       .task-edit-form-label{
         font-size: 16px;

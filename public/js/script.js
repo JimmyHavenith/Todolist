@@ -35,6 +35,22 @@
       })
     });
 
+    // Delete project
+    $('.icon-project-delete').click(function(e){
+      e.preventDefault();
+      var delete_url = e.currentTarget.href+'/ajax';
+      var blockParent = $(this).parent();
+      $.ajax({
+        type: "GET",
+        url: delete_url,
+        success: function(){
+          blockParent.fadeOut('slow', function() {
+            $(this).remove();
+          })
+        }
+      })
+    });
+
     // Check task
     $('.check-task-box').change(function() {
       if( this.checked == true ){

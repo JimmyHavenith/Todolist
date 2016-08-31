@@ -3,12 +3,24 @@
     background-color: $main-color;
   }
   .tasks-item {
-    background-color: $main-color;
+    background-color: lighten($main-color, 10%);
   }
   .auth-options{
     background-color: $main-color;
   }
   .auth-options li a:hover{
+    background-color: darken($main-color, 5%);
+  }
+  .project-add-submit{
+    background-color: $main-color;
+  }
+  .project-add-submit:hover{
+    background-color: darken($main-color, 5%);
+  }
+  .task-add-submit{
+    background-color: $main-color;
+  }
+  .task-add-submit:hover{
     background-color: darken($main-color, 5%);
   }
 }
