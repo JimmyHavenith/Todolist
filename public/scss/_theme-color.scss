@@ -5,6 +5,12 @@
   .tasks-item {
     background-color: $main-color;
   }
+  .auth-options{
+    background-color: $main-color;
+  }
+  .auth-options li a:hover{
+    background-color: darken($main-color, 5%);
+  }
 }
 
 .default {

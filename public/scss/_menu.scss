@@ -1,18 +1,55 @@
 header{
-  padding: 15px;
-  height: 20px;
+  height: 50px;
   .header-menu-logo{
     float: left;
-    a{
-      color: white;
-    }
-    a:hover{
-      color: $color-white-break;
-      text-decoration: none;
+    h1{
+      padding: 15px 0;
+      a{
+        padding: 15px;
+        font-family: $font-1;
+        color: white;
+        text-decoration: none;
+        span{
+          font-weight: bold;
+        }
+      }
+      a:hover{
+        color: $color-white-break;
+      }
     }
   }
   .header-menu-nav{
     float: right;
+    ul{
+      li{
+        a{
+          display: block;
+          padding: 17px 20px 15px 93px;
+          text-decoration: none;
+        }
+        a:hover ~ .auth-options{
+          display: block;
+        }
+        ul{
+          background-color: $main-color;
+          margin-top: 15px;
+          position: absolute;
+          right: 0px;
+          top: 35px;
+          display: none;
+          li{
+            a{
+              display: block;
+              padding: 15px 20px;
+              text-decoration: none;
+            }
+          }
+        }
+        ul:hover{
+          display: block;
+        }
+      }
+    }
     a{
       color: white;
     }

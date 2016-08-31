@@ -84,12 +84,28 @@ table {
   background-color: #2c3e50;
 }
 
+.default .auth-options {
+  background-color: #2c3e50;
+}
+
+.default .auth-options li a:hover {
+  background-color: #233140;
+}
+
 .color_1 .header {
   background-color: #2c3e50;
 }
 
 .color_1 .tasks-item {
   background-color: #2c3e50;
+}
+
+.color_1 .auth-options {
+  background-color: #2c3e50;
+}
+
+.color_1 .auth-options li a:hover {
+  background-color: #233140;
 }
 
 .color_2 .header {
@@ -100,12 +116,28 @@ table {
   background-color: #1a8c8e;
 }
 
+.color_2 .auth-options {
+  background-color: #1a8c8e;
+}
+
+.color_2 .auth-options li a:hover {
+  background-color: #167778;
+}
+
 .color_3 .header {
   background-color: #e65a3a;
 }
 
 .color_3 .tasks-item {
   background-color: #e65a3a;
+}
+
+.color_3 .auth-options {
+  background-color: #e65a3a;
+}
+
+.color_3 .auth-options li a:hover {
+  background-color: #e34723;
 }
 
 .color_4 .header {
@@ -116,6 +148,14 @@ table {
   background-color: #a05663;
 }
 
+.color_4 .auth-options {
+  background-color: #a05663;
+}
+
+.color_4 .auth-options li a:hover {
+  background-color: #8f4d59;
+}
+
 .color_5 .header {
   background-color: #81bcb8;
 }
@@ -124,12 +164,28 @@ table {
   background-color: #81bcb8;
 }
 
+.color_5 .auth-options {
+  background-color: #81bcb8;
+}
+
+.color_5 .auth-options li a:hover {
+  background-color: #70b3af;
+}
+
 .color_6 .header {
   background-color: #f0ad4e;
 }
 
 .color_6 .tasks-item {
   background-color: #f0ad4e;
+}
+
+.color_6 .auth-options {
+  background-color: #f0ad4e;
+}
+
+.color_6 .auth-options li a:hover {
+  background-color: #eea236;
 }
 
 html {
@@ -144,25 +200,63 @@ body {
 }
 
 header {
-  padding: 15px;
-  height: 20px;
+  height: 50px;
 }
 
 header .header-menu-logo {
   float: left;
 }
 
-header .header-menu-logo a {
-  color: white;
+header .header-menu-logo h1 {
+  padding: 15px 0;
 }
 
-header .header-menu-logo a:hover {
-  color: #f5f5f5;
+header .header-menu-logo h1 a {
+  padding: 15px;
+  font-family: "Lato", sans-serif;
+  color: white;
   text-decoration: none;
+}
+
+header .header-menu-logo h1 a span {
+  font-weight: bold;
+}
+
+header .header-menu-logo h1 a:hover {
+  color: #f5f5f5;
 }
 
 header .header-menu-nav {
   float: right;
+}
+
+header .header-menu-nav ul li a {
+  display: block;
+  padding: 17px 20px 15px 93px;
+  text-decoration: none;
+}
+
+header .header-menu-nav ul li a:hover ~ .auth-options {
+  display: block;
+}
+
+header .header-menu-nav ul li ul {
+  background-color: #2c3e50;
+  margin-top: 15px;
+  position: absolute;
+  right: 0px;
+  top: 35px;
+  display: none;
+}
+
+header .header-menu-nav ul li ul li a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+header .header-menu-nav ul li ul:hover {
+  display: block;
 }
 
 header .header-menu-nav a {
@@ -190,9 +284,9 @@ header .header-menu-nav a {
   text-align: center;
 }
 
-.lists .lists-lists .lists-scroll-choice li a:hover {
+.lists .lists-lists .lists-scroll-choice li a:hover, .lists .lists-lists .lists-scroll-choice li .list-choice-current {
   background-color: transparent !important;
-  border-top: none !important;
+  border-top: 1px solid transparent !important;
   border-bottom: 1px solid #afafaf !important;
   color: black;
 }
@@ -338,23 +432,38 @@ header .header-menu-nav a {
   border-radius: 2px;
 }
 
+.tasks .tasks-tasks .task-add .task-form-project {
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+  color: #222;
+  float: left;
+  font-family: "Open Sans",Arial,sans-serif;
+  font-size: 16px;
+  line-height: normal !important;
+  margin-bottom: 10px;
+  padding: 10px 18px 11px;
+  width: 85.5%;
+}
+
 .tasks .tasks-tasks .task-add .task-edit-form, .tasks .tasks-tasks .task-add .task-edit-form-date {
   margin: 10px 0 25px;
 }
 
-.tasks .tasks-tasks .task-add .task-add-form:focus {
-  border: 2px solid #e6e6e6;
+.tasks .tasks-tasks .task-add .task-form-project:focus {
+  border: 1px solid grey;
 }
 
 .tasks .tasks-tasks .task-add .task-add-submit {
   background-color: #1a8c8e;
   border: medium none;
+  border-radius: 0 2px 2px 0;
   color: white;
+  cursor: pointer;
   font-size: 14px;
   font-weight: bold;
-  padding: 7px 20px;
-  cursor: pointer;
-  border-radius: 2px;
+  padding: 13px 20px;
+  width: 11%;
 }
 
 .tasks .tasks-tasks .task-add .task-add-submit:hover {
@@ -363,6 +472,14 @@ header .header-menu-nav a {
 
 .tasks .tasks-tasks .task-add .task-edit-form-label {
   font-size: 16px;
+}
+
+.tasks .tasks-tasks .task-add select {
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+  font-size: 16px;
+  margin: 10px 0 25px;
+  padding: 10px 18px 11px;
 }
 
 .tasks .tasks-tasks .task-add .task-edit-form-date {
@@ -404,10 +521,10 @@ header .header-menu-nav a {
   content: "";
 }
 
-.tasks .tasks-tasks h3 a {
+.tasks .tasks-tasks h3 {
   border-radius: 3px;
   box-sizing: border-box;
-  color: #afafaf;
+  color: grey;
   display: inline-block;
   font-weight: 400;
   letter-spacing: 1px;
@@ -417,6 +534,27 @@ header .header-menu-nav a {
   background-color: #f5f5f5;
   border: 1px solid #e6e6e6;
   font-size: 14px;
+  text-decoration: none;
+}
+
+.tasks .tasks-tasks .tasks-done-title a {
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: grey;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 16px;
+  padding: 3px 10px;
+  text-transform: uppercase;
+  background-color: #f5f5f5;
+  border: 1px solid #e6e6e6;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.tasks .tasks-tasks .tasks-done-title a:hover {
+  border: 1px solid grey;
 }
 
 .tasks .tasks-tasks .tasks-done-title {

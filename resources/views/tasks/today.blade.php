@@ -5,7 +5,7 @@
 
   @foreach( $project as $value )
     @if ( in_array( $value->id, $todayProject) )
-      <h3><a href="#">{{ $value->name }}</a></h3>
+      <h3>{{ $value->name }}</h3>
       <ol>
         @foreach( $todayTasks as $task )
           @if( $task->project_id == $value->id )

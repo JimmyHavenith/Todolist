@@ -17,12 +17,17 @@
     <header class="header">
       <nav class="header-menu">
         <div class="header-menu-logo">
-          <h1><a href="/today">Todolist</a></h1>
+          <h1><a href="/today">minima<span>List</span></a></h1>
         </div>
         <div class="header-menu-nav">
           <ul>
           @if( Auth::check() )
-            <li><a href="/auth/logout">Se déconnecter</a></li>
+            <li>
+              <a href="#">{{ Auth::user()->name }}</a>
+              <ul class="auth-options">
+                <li><a href="/settings">Paramètres</a></li>
+                <li><a href="/auth/logout">Se déconnecter</a></li>
+              </ul>
           @else
             <li><a href="/auth/login">Se connecter</a></li>
             <li><a href="/auth/register">S'inscrire</a></li>
@@ -30,11 +35,6 @@
           </ul>
         </div>
       </nav>
-      @if (session()->has('flash_notification.message'))
-        <div class="container">
-            @include('flash::message')
-        </div>
-      @endif
     </header>
     @if( Auth::check() )
     <section class="lists">
@@ -47,13 +47,18 @@
             </ul>
             <div class="lists-scroll-choice">
               <ul>
-                <li><a href="/projects">Projets</a></li>
-                <li><a href="/tags">Étiquettes</a></li>
+                <?php
+                $urlParts = explode('/', Request::url());
+                ?>
+                @if( $urlParts[3] != 'tags' )
+                  <li><a class="list-choice-current" href="/projects">Projets</a></li>
+                  <li><a href="/tags">Étiquettes</a></li>
+                @else
+                  <li><a href="/projects">Projets</a></li>
+                  <li><a class="list-choice-current" href="/tags">Étiquettes</a></li>
+                @endif
               </ul>
             </div>
-            <?php
-            $urlParts = explode('/', Request::url());
-            ?>
             @if( $urlParts[3] != 'tags' )
               <ul>
                 <?php $categories = \Auth::user()->projects()->get(); ?>

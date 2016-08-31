@@ -47,27 +47,48 @@
         width: 97%;
         border-radius: 2px;
       }
+      .task-form-project{
+        background-color: white;
+        border: 1px solid $color-border;
+        border-radius: 2px;
+        color: #222;
+        float: left;
+        font-family: "Open Sans",Arial,sans-serif;
+        font-size: 16px;
+        line-height: normal !important;
+        margin-bottom: 10px;
+        padding: 10px 18px 11px;
+        width: 85.5%;
+      }
       .task-edit-form, .task-edit-form-date{
         margin: 10px 0 25px;
       }
-      .task-add-form:focus{
-        border: 2px solid $color-border;
+      .task-form-project:focus{
+        border: 1px solid grey;
       }
       .task-add-submit{
         background-color: $color-greeen;
         border: medium none;
+        border-radius: 0 2px 2px 0;
         color: white;
+        cursor: pointer;
         font-size: 14px;
         font-weight: bold;
-        padding: 7px 20px;
-        cursor: pointer;
-        border-radius: 2px;
+        padding: 13px 20px;
+        width: 11%;
       }
       .task-add-submit:hover{
         background-color: $color-greeen-clear;
       }
       .task-edit-form-label{
         font-size: 16px;
+      }
+      select{
+        border: 1px solid $color-border;
+        border-radius: 2px;
+        font-size: 16px;
+        margin: 10px 0 25px;
+        padding: 10px 18px 11px;
       }
       .task-edit-form-date{
         width: 85px;
@@ -104,10 +125,25 @@
       content: "";
     }
     h3{
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: grey;
+      display: inline-block;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 16px;
+      padding: 3px 10px;
+      text-transform: uppercase;
+      background-color: $color-white-break;
+      border: 1px solid $color-border;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .tasks-done-title{
       a{
         border-radius: 3px;
         box-sizing: border-box;
-        color: $color-grey;
+        color: grey;
         display: inline-block;
         font-weight: 400;
         letter-spacing: 1px;
@@ -117,6 +153,10 @@
         background-color: $color-white-break;
         border: 1px solid $color-border;
         font-size: 14px;
+        text-decoration: none;
+      }
+      a:hover{
+        border: 1px solid grey;
       }
     }
     .tasks-done-title{

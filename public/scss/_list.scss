@@ -13,9 +13,9 @@
           border-bottom: 1px solid $color-border !important;
           text-align: center;
         }
-        a:hover{
+        a:hover, .list-choice-current{
           background-color: transparent !important;
-          border-top: none !important;
+          border-top: 1px solid transparent !important;
           border-bottom: 1px solid $color-grey !important;
           color: black;
         }

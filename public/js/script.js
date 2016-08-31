@@ -95,7 +95,7 @@
       var value = $(this).parent().children('.project-name-change').children('span').text();
       var id = $(this).parent().attr('id');
 
-      $(this).parent().children('.project-name-change').replaceWith('<img class="icon-project-click" src="/img/icon-project.png" alt="" /><input id="project-change-id" class="project-change-name" type="text" value="'+value+'">');
+      $(this).parent().children('.project-name-change').replaceWith('<input id="project-change-id" class="project-change-name" type="text" value="'+value+'">');
       $("#project-change-id").focus();
 
       $("#project-change-id").keypress( function(e) {

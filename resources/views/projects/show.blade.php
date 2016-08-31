@@ -7,11 +7,10 @@
     <h2>{{ $project->name }}</h2>
     <div class="task-add">
       {!! Form::model(new App\Task, ['route' => ['projects.tasks.store', $project->slug], 'role' => 'form']) !!}
-        <input type="text" name="name" placeholder="Ajouter une tâche" class="task-add-form">
+        <input type="text" name="name" placeholder="+ Ajouter une tâche" class="task-form-project">
         {{ Form::button('Ajouter', array('type'=>'submit', 'class'=>'task-add-submit')) }}
       {!! Form::close() !!}
     </div>
-
     {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form', 'class' => 'sendForm sendFormDesc']) !!}
       <input type="hidden" name="project" value="{{ $project->id }}">
       <ol class="unchecked-task-group">
@@ -47,7 +46,6 @@
                   </div>
                 </div>
                 <div>
-
                 </div>
                 <div class="tasks-item-infos-desc">
                   <span class="tasks-item-infos-icon">
@@ -68,8 +66,7 @@
           @endif
         @endforeach
       </ol>
-
-      <h3 class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></h3>
+      <span class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></span>
       <input type="hidden" name="project" value="{{ $project->id }}">
       <ol class="checked-task-group">
         @foreach( $project->tasks as $task )
