@@ -1,6 +1,9 @@
 @extends('layout')
 
 @section('mainContent')
+  @if( $tag == null )
+    <h2>Vous n'avez pas encore d'étiquettes</h2>
+  @else
   <h2>{{ $tag->name }}</h2>
 
   {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form']) !!}
@@ -118,4 +121,5 @@
     </ol>
     {{ Form::button('Valider', array('class'=>'task-done-submit', 'type'=>'submit')) }}
   {!! Form::close() !!}
+  @endif
 @endsection

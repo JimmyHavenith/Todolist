@@ -66,6 +66,7 @@ Route::get('projects/uncheckSingle/{id}', ['as' => 'uncheckSingle', 'uses' => 'T
 Route::get('projects/tasksName/{id}', ['as' => 'tasksName', 'uses' => 'TasksController@tasksName']); // ajax
 Route::get('projects/projectsName/{id}', ['as' => 'projectsName', 'uses' => 'ProjectsController@projectsName']); // ajax
 Route::get('projects/descriptionName/{id}', ['as' => 'descriptionName', 'uses' => 'TasksController@descriptionName']); // ajax
+Route::get('projects/dateName/{id}', ['as' => 'dateName', 'uses' => 'TasksController@dateName']); // ajax
 
 
 Route::resource('settings', 'SettingsController');

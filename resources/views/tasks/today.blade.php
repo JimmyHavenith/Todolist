@@ -2,12 +2,6 @@
 
 @section('mainContent')
   <h2>Aujourd'hui</h2>
-  <div class="task-add">
-    {!! Form::model(new App\Task, ['route' => ['projects.tasks.store', 'today'], 'role' => 'form']) !!}
-      <input type="text" name="name" placeholder="Ajouter une tâche" class="task-add-form">
-      {{ Form::button('Ajouter', array('type'=>'submit', 'class'=>'task-add-submit')) }}
-    {!! Form::close() !!}
-  </div>
 
   @foreach( $project as $value )
     @if ( in_array( $value->id, $todayProject) )

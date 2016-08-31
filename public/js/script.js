@@ -77,6 +77,33 @@
       }
     });
 
+
+    // Change project name
+    $('.project-name-change-icon').click(function(e){
+      e.preventDefault();
+      var value = $(this).parent().children('.project-name-change').children('span').text();
+      var id = $(this).parent().attr('id');
+
+      $(this).parent().children('.project-name-change').replaceWith('<input id="project-change-id" class="project-change-name" type="text" value="'+value+'">');
+      $("#project-change-id").focus();
+
+      $("#project-change-id").keypress( function(e) {
+        if( e.keyCode == 13 ) {
+          var text = $('#project-change-id').val();
+          $.ajax({
+            type: "GET",
+            url: 'projectsName/' + id,
+            data: 'text=' + text,
+            success: function(){
+              $('#project-change-id').replaceWith('<a href="http://localhost/projects/" class="project-show project-name-change"><img alt="" src="/img/icon-project.png"><span class="project-name-change-content">'+text+'</span></a>');
+            }
+          })
+        }
+      } );
+
+    });
+
+
     //Edit name task
     $('.tasks-item-name').click(function(e){
       var value = $(this).text();
@@ -105,38 +132,10 @@
     });
 
 
-
-    // Change project name
-    $('.project-name-change-icon').click(function(e){
-      e.preventDefault();
-      var value = $(this).parent().children('.project-name-change').children('span').text();
-      var id = $(this).parent().attr('id');
-
-      $(this).parent().children('.project-name-change').replaceWith('<input id="project-change-id" class="project-change-name" type="text" value="'+value+'">');
-      $("#project-change-id").focus();
-
-      $("#project-change-id").keypress( function(e) {
-        if( e.keyCode == 13 ) {
-          var text = $('#project-change-id').val();
-          $.ajax({
-            type: "GET",
-            url: 'projectsName/' + id,
-            data: 'text=' + text,
-            success: function(){
-              $('#project-change-id').replaceWith('<a href="http://localhost/projects/" class="project-show project-name-change"><img alt="" src="/img/icon-project.png"><span class="project-name-change-content">'+text+'</span></a>');
-            }
-          })
-        }
-      } );
-
-    });
-
-
     //Edit description task
     $('.task-infos-p').click(function(e){
       var value = $(this).text();
       $(this).replaceWith('<textarea id="tasks-change-desc" class="tasks-change-desc">'+value+'</textarea>');
-      console.log(value);
       $("#tasks-change-desc").focus();
     });
 
@@ -151,18 +150,10 @@
         url: 'descriptionName/' + idTaskDesc,
         data: 'text=' + text,
         success: function(){
-          $('#tasks-change-desc').replaceWith('<div class="task-infos"><p>'+text+'</p></div>');
+          $('#tasks-change-desc').replaceWith('<div class="task-infos"><p class="task-infos-p">'+text+'</p></div>');
         }
       })
     });
-
-    $(document).on("focusout","#tasks-change-desc",function(e){
-      var value = $(this).val();
-      $(this).replaceWith('<div class="task-infos"><p>'+value+'</p></div>');
-    });
-
-
-
 
   });
 })(jQuery);

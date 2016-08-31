@@ -249,4 +249,13 @@ class TasksController extends Controller {
 
 	}
 
+	public function dateName($id)
+	{
+		$task = Task::findOrFail($id);
+		$text = Input::get('text');
+		$task->date = $text;
+		$task->save();
+
+	}
+
 }
