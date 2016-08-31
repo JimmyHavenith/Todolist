@@ -1,0 +1,27 @@
+@mixin color-theme( $mainColor ) {
+  .header {
+    background-color: $mainColor;
+  }
+}
+
+.default {
+  @include color-theme( $color-1 );
+}
+.color_1 {
+  @include color-theme( $color-1 );
+}
+.color_2 {
+  @include color-theme( $color-2 );
+}
+.color_3 {
+  @include color-theme( $color-3 );
+}
+.color_4 {
+  @include color-theme( $color-4 );
+}
+.color_5 {
+  @include color-theme( $color-5 );
+}
+.color_6 {
+  @include color-theme( $color-6 );
+}

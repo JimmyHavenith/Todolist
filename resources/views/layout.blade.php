@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <title>Todolist | @yield('title')</title>
   </head>
-  <body id="app-layout">
-    <header>
+  <body id="app-layout" class="{{ isset(Auth::user()->color) ? Auth::user()->color : '' }}">
+    <header class="header">
       <nav class="header-menu">
         <div class="header-menu-logo">
           <h1><a href="/today">Todolist</a></h1>

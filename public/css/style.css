@@ -52,6 +52,34 @@ table {
   border-spacing: 0;
 }
 
+.default .header {
+  background-color: #2c3e50;
+}
+
+.color_1 .header {
+  background-color: #2c3e50;
+}
+
+.color_2 .header {
+  background-color: #1a8c8e;
+}
+
+.color_3 .header {
+  background-color: #e65a3a;
+}
+
+.color_4 .header {
+  background-color: #a05663;
+}
+
+.color_5 .header {
+  background-color: #81bcb8;
+}
+
+.color_6 .header {
+  background-color: #f0ad4e;
+}
+
 html {
   height: 100%;
 }
@@ -65,7 +93,6 @@ body {
 }
 
 header {
-  background-color: #2c3e50;
   padding: 15px;
   height: 20px;
 }
@@ -757,4 +784,78 @@ footer p {
 
 footer a {
   color: #1a8c8e;
+}
+
+.title-change-color, .title-change-typo {
+  margin-top: 30px;
+}
+
+.div-change-color {
+  display: block;
+  width: 100%;
+}
+
+.div-change-color .select-color {
+  margin-top: 20px;
+}
+
+.div-change-color .select-color li {
+  box-sizing: border-box;
+  float: left;
+  height: 30px;
+  margin-bottom: 1em;
+  margin-right: 15px;
+  width: 30px;
+}
+
+.div-change-color .select-color li a {
+  border: 1px solid #afafaf;
+  display: block;
+  height: 29px;
+}
+
+.div-change-color .select-color li .unlink {
+  text-decoration: none;
+}
+
+.div-change-color .select-color li .hide-text {
+  overflow: hidden;
+  text-indent: 1001%;
+  white-space: nowrap;
+}
+
+.div-change-color .select-color .color-1 {
+  background-color: #2c3e50;
+  color: #2c3e50;
+}
+
+.div-change-color .select-color .color-2 {
+  background-color: #1a8c8e;
+  color: #1a8c8e;
+}
+
+.div-change-color .select-color .color-3 {
+  background-color: #e65a3a;
+  color: #e65a3a;
+}
+
+.div-change-color .select-color .color-4 {
+  background-color: #a05663;
+  color: #a05663;
+}
+
+.div-change-color .select-color .color-5 {
+  background-color: #81bcb8;
+  color: #81bcb8;
+}
+
+.div-change-color .select-color .color-6 {
+  background-color: #f0ad4e;
+  color: #f0ad4e;
+}
+
+.div-change-color::after {
+  display: block;
+  clear: both;
+  content: "";
 }

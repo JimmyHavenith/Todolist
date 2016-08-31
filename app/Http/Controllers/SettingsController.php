@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Input;
+use Redirect;
+use App\user;
 use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class SettingsController extends Controller
 {
@@ -12,4 +15,12 @@ class SettingsController extends Controller
   {
     return view('settings/settings');
   }
+
+  public function updateColor( $number ){
+    $user = User::findOrFail( \Auth::user()->id );
+    $user->color = 'color_'.$number;
+    $user->save();
+    return redirect()->back();
+  }
+
 }
