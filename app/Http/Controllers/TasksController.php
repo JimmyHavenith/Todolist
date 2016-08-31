@@ -231,6 +231,24 @@ class TasksController extends Controller {
 
 	}
 
+	public function checkSinglee($id)
+	{
+
+		$task = Task::findOrFail($id);
+		$task->completed = 1;
+		$task->save();
+
+	}
+
+	public function uncheckSinglee($id)
+	{
+
+		$task = Task::findOrFail($id);
+		$task->completed = 0;
+		$task->save();
+
+	}
+
 	public function tasksName($id)
 	{
 		$task = Task::findOrFail($id);

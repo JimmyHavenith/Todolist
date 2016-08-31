@@ -119,12 +119,18 @@ class TagsController extends Controller {
 	 * @param  \App\Project $project
 	 * @return Response
 	 */
-	public function destroy(Tag $tag)
+	public function destroy($id, Tag $tag, $ajax = null)
 	{
+		$tag = Tag::findOrFail($id);
 		$tag->delete();
-
-		flash('Projet supprimé', 'success');
-		return Redirect::route('tags.index');
+		if( $ajax == null ){
+			if( count($tag) ) {
+				$tag = $tag->first();
+			} else {
+				$tag = null;
+			}
+			return view('tags.show', compact('tag'));
+		}
 	}
 
 }

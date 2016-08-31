@@ -55,6 +55,7 @@ Route::resource('tags.tasks', 'TasksController');
 
 Route::get('tasks/delete/{id}/{ajax?}', ['as' => 'deleteTask', 'uses' => 'TasksController@destroy']);
 Route::get('projects/delete/{id}/{ajax?}', ['as' => 'deleteProject', 'uses' => 'ProjectsController@destroy']);
+Route::get('tags/delete/{id}/{ajax?}', ['as' => 'deleteTag', 'uses' => 'TagsController@destroy']);
 
 
 Route::get('today', ['as' => 'today', 'uses' => 'TasksController@today']);
@@ -64,6 +65,10 @@ Route::post('check', ['as' => 'check', 'uses' => 'TasksController@check']);
 
 Route::get('projects/checkSingle/{id}', ['as' => 'checkSingle', 'uses' => 'TasksController@checkSingle']); //ajax
 Route::get('projects/uncheckSingle/{id}', ['as' => 'uncheckSingle', 'uses' => 'TasksController@uncheckSingle']); //ajax
+
+Route::get('tags/checkSingleTag/{id}', ['as' => 'checkSingle', 'uses' => 'TasksController@checkSingle']); //ajax
+Route::get('tags/uncheckSingleTag/{id}', ['as' => 'uncheckSingle', 'uses' => 'TasksController@uncheckSingle']); //ajax
+
 Route::get('projects/tasksName/{id}', ['as' => 'tasksName', 'uses' => 'TasksController@tasksName']); // ajax
 Route::get('projects/projectsName/{id}', ['as' => 'projectsName', 'uses' => 'ProjectsController@projectsName']); // ajax
 Route::get('projects/descriptionName/{id}', ['as' => 'descriptionName', 'uses' => 'TasksController@descriptionName']); // ajax

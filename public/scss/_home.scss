@@ -1,9 +1,8 @@
 #home-page{
   background-color: white;
-  header{
+  .header-home{
     background-color: transparent;
-    padding: 15px;
-    height: 20px;
+    height: 50px;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,13 +10,20 @@
     nav{
       display: block;
       margin: auto;
-      width: 80%;
     }
     .header-home-menu-logo{
       float: left;
-      a{
-        color: white;
-        text-decoration: none;
+      h1{
+        padding: 15px 0;
+        a{
+          padding: 15px;
+          font-family: $font-1;
+          color: white;
+          text-decoration: none;
+          span{
+            font-weight: bold;
+          }
+        }
       }
       a:hover{
         color: $color-white-break;
@@ -25,12 +31,20 @@
     }
     .header-home-menu-nav{
       float: right;
-      li{
-        float: left;
-        margin-left: 25px;
-        a{
-          color: white;
-          text-decoration: none;
+      ul{
+        padding: 15px;
+        li{
+          float: left;
+          margin-left: 25px;
+          a{
+            font-family: $font-1;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+          }
+          a:hover{
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -67,11 +81,13 @@
   h2{
     color: white;
     font-size: 45px;
-    font-weight: bold;
     margin-bottom: 15px;
     position: absolute;
     top: 45%;
-    left: 40%;
+    left: 42%;
+    span{
+      font-weight: bold;
+    }
   }
 }
 .home-banner::after{

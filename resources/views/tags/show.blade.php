@@ -6,13 +6,13 @@
   @else
   <h2>{{ $tag->name }}</h2>
 
-  {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form']) !!}
+  {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form', 'class' => 'sendForm sendFormDesc']) !!}
     <input type="hidden" name="project" value="{{ $tag->id }}">
-    <ol>
+    <ol class="unchecked-task-group">
       @foreach( $tag->tasks as $task )
         @if( $task->completed == 0 )
           <li class="tasks-item">
-            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}"><span class="tasks-item-name">{{ $task->name }}</span>
+            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" class="check-task-box-tag" value="{{ $task->id }}"><span class="tasks-item-name">{{ $task->name }}</span>
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
             <div class="tasks-item-button">
               <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">
@@ -63,13 +63,13 @@
       @endforeach
     </ol>
 
-    <h3 class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></h3>
+    <span class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></span>
     <input type="hidden" name="project" value="{{ $tag->id }}">
-    <ol>
+    <ol class="checked-task-group">
       @foreach( $tag->tasks as $task )
         @if( $task->completed == 1 )
           <li class="tasks-item">
-            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked" class="completed"><span class="tasks-item-name">{{ $task->name }}</span>
+            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked" class="check-task-box-tag completed"><span class="tasks-item-name">{{ $task->name }}</span>
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
           <div class="tasks-item-button">
             <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">

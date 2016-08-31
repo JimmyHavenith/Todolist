@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="home-banner-bg">
-      <h2>minimaList</h2>
+      <h2>minima<span>List</span></h2>
     </div>
   </section>
   <section class="home-a">
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div class="home-features-div-img">
-            <img src="../img/mac.png" alt="" />
+            <img src="../img/mac2.png" alt="" />
           </div>
         </div>
       </div>

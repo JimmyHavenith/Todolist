@@ -67,8 +67,8 @@
                     <a class="project-show project-name-change" href="{{ route('projects.show', $category->slug) }}">
                       <img src="/img/icon-project.png" alt="" />
                       <span class="project-name-change-content">{{ $category->name }}</span>
+                      <a class="icon-project-delete" href="{{ action('ProjectsController@destroy', ['id' => $category->id]) }}"><img src="/img/icon-project-delete.png" alt="" /><span>Supprimer</span></a>
                       <a class="icon-project-edit project-name-change-icon" href="{{ route('projects.edit', array($category->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
-                      <a class="icon-project-delete" href="{{ action('ProjectsController@destroy', ['id' => $category->id]) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Supprimer</span></a>
                     </a>
                   </li>
                 @endforeach
@@ -85,11 +85,15 @@
                     <a class="project-show" href="{{ route('tags.show', $etiquette->slug) }}">
                       <img src="/img/icon-project.png" alt="" />
                       <span>{{ $etiquette->name }}</span>
+                      <a class="icon-project-delete" href="{{ action('TagsController@destroy', ['id' => $etiquette->id]) }}"><img src="/img/icon-project-delete.png" alt="" /><span>Supprimer</span></a>
                       <a class="icon-project-edit" href="{{ route('tags.edit', array($etiquette->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
                     </a>
                   </li>
                 @endforeach
-                  <li class="lists-add"><a href="{{ url('/tags/create') }}"><span>+</span>Créer une étiquette</a></li>
+                {!! Form::model(new App\Tag, array('route' => ['tags.store'], 'role' => 'form')) !!}
+                <input type="text" name="name" placeholder="+ Créer une étiquette" class="add-project-form">
+                  {{ Form::button('Créer', array('type'=>'submit', 'class'=>'project-add-submit')) }}
+                {!! Form::close() !!}
               </ul>
             @endif
           </div>

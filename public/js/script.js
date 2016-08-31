@@ -4,6 +4,7 @@
   $(document).ready(function()
   {
 
+    // Scroll menu
     var menu = $('header');
     var heightBanner = $('.home-b').height() - 50;
 
@@ -18,6 +19,19 @@
         $('header').css('transition', '0.5s');
       }
     });
+
+    // Header center
+    var widthTitle = $('.home-banner-bg h2').width();
+    var heightTitle = $('.home-banner-bg h2').height();
+    var blocWidth = $('.home-banner-bg').width();
+    var blocHeight = $('.home-banner-bg').height();
+
+    var leftTitle = (blocWidth - widthTitle) / 2;
+    var topTitle = (blocHeight - heightTitle) / 2;
+    $('.home-banner-bg h2').css('left', leftTitle);
+    $('.home-banner-bg h2').css('top', topTitle);
+
+
 
     // Delete task
     $('.task-item-delete').click(function(e){
@@ -54,6 +68,7 @@
     // Check task
     $('.check-task-box').change(function() {
       if( this.checked == true ){
+        console.log('ok');
         var elementCheck = $(this).parent();
         var idCheck = $(this).attr('id');
         var that = $(this);
@@ -72,6 +87,36 @@
         $.ajax({
           type: "GET",
           url: 'uncheckSingle/' + idCheck,
+          success: function(){
+            $(that).removeClass('completed');
+            $('.unchecked-task-group').append(elementCheck);
+          }
+        })
+      }
+    });
+
+    // Check task
+    $('.check-task-box-tag').change(function() {
+      if( this.checked == true ){
+        console.log('ok');
+        var elementCheck = $(this).parent();
+        var idCheck = $(this).attr('id');
+        var that = $(this);
+        $.ajax({
+          type: "GET",
+          url: 'checkSingleTag/' + idCheck,
+          success: function(){
+            $(that).addClass('completed');
+            $('.checked-task-group').append(elementCheck);
+          }
+        })
+      } else {
+        var elementCheck = $(this).parent();
+        var idCheck = $(this).attr('id');
+        var that = $(this);
+        $.ajax({
+          type: "GET",
+          url: 'uncheckSingleTag/' + idCheck,
           success: function(){
             $(that).removeClass('completed');
             $('.unchecked-task-group').append(elementCheck);
