@@ -125,7 +125,7 @@
             url: 'projectsName/' + id,
             data: 'text=' + text,
             success: function(){
-              $('#project-change-id').replaceWith('<a href="http://localhost/projects/eau" class="project-show project-name-change"><img alt="" src="/img/icon-project.png"><span class="project-name-change-content">'+text+'</span></a>');
+              $('#project-change-id').replaceWith('<a href="http://localhost/projects/" class="project-show project-name-change"><img alt="" src="/img/icon-project.png"><span class="project-name-change-content">'+text+'</span></a>');
             }
           })
         }

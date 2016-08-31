@@ -65,11 +65,11 @@ class ProjectsController extends Controller {
 
 		$input = Input::all();
 		$input['user_id'] = \Auth::id();
-		$input['slug'] = str_slug( $input['name'], '-');
+		$slug = $input['slug'] = str_slug( $input['name'], '-');
 		Project::create( $input );
 
 		flash('Projet ajouté', 'success');
-		return Redirect::route('projects.show', $project->slug);
+		return Redirect::route('projects.show', $slug);
 
 	}
 
