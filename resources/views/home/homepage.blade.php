@@ -14,12 +14,13 @@
   <section class="home-a">
     <div class="home-about">
       <p>
-        <p>
-          minimaList est la manière la plus simple de mener à bien toutes vos tâches.
-          Que vous souhaitiez planifier vos vacances, gérer plusieurs projets professionnels,
-          minimaList est là pour vous aider à réaliser toutes vos tâches personnelles et professionnelles.
-        </p>
+        minimaList est la manière la plus simple de mener à bien toutes vos tâches.
+        Que vous souhaitiez planifier vos vacances, gérer plusieurs projets professionnels,
+        minimaList est là pour vous aider à réaliser toutes vos tâches personnelles et professionnelles.
       </p>
+      <div class="home-about-create">
+        <a href="/auth/register">Créer un compte gratuitement</a>
+      </div>
     </div>
   </section>
   <section class="home-f">

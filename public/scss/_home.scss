@@ -109,6 +109,27 @@
       color: white;
       font-size: 1.2em;
     }
+    .home-about-create{
+      display: block;
+      margin: auto;
+      width: 20%;
+      margin-top: 40px;
+      a{
+        background-color: white;
+        border-radius: 3px;
+        color: $color-greeen;
+        display: block;
+        font-size: 1.1em;
+        padding: 15px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      a:hover{
+        background-color: $color-border;
+      }
+    }
   }
 }
 .home-f{
