@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Modifier une tâche' )
 @section('mainContent')
 <h2>Modifier la tâche "{{ $task->name }}"</h2>
 <div class="task-add">

@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Paramètres' )
 @section('mainContent')
   <h2>Paramètre du compte</h2>
   <div class="div-change-color">

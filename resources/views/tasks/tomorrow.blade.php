@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Demain' )
 @section('mainContent')
   <h2>Demain</h2>
   @foreach( $project as $value )

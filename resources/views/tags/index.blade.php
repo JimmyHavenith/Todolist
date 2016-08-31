@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Toutes les étiquettes' )
 @section('mainContent')
   <div class="container">
     <div class="row">

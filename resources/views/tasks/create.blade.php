@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Créer une tâche' )
 @section('mainContent')
   <div class="container">
     <div class="row">

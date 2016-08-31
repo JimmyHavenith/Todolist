@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Tâche' )
 @section('mainContent')
   <h2>{{ $task->name }} <span class="task-to-projet">( {{ $project->name }} )</span></h2>
   <div class="task-add">

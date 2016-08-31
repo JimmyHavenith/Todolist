@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Montserrat:400,700|Open+Sans:400,700|Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <title>Todolist | @yield('title')</title>
+    <title>minimaList | @yield('title')</title>
   </head>
   <body id="app-layout" class="{{ isset(Auth::user()->color) ? Auth::user()->color : '' }} {{ isset(Auth::user()->font) ? Auth::user()->font : '' }}">
     <header class="header">

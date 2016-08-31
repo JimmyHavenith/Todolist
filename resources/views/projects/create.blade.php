@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Créer un projet' )
 @section('mainContent')
   <h2>Créer un projet</h2>
   <div class="task-add">

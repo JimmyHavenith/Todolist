@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Aujourd hui' )
 @section('mainContent')
   <h2>Aujourd'hui</h2>
 

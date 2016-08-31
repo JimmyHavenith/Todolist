@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Modifier un projet' )
 @section('mainContent')
 
 <h2>Modifier le projet "{{ $project->name }}"</h2>

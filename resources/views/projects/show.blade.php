@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Projets' )
 @section('mainContent')
   @if( $project == null )
     <h2>Vous n'avez pas encore de projets</h2>

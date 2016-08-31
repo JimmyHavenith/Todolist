@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Modifier une étiquette' )
 @section('mainContent')
 
 <h2>Modifier le tag "{{ $tag->name }}"</h2>

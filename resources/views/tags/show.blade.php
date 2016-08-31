@@ -1,5 +1,5 @@
 @extends('layout')
-
+@section('title', 'Etiquette' )
 @section('mainContent')
   @if( $tag == null )
     <h2>Vous n'avez pas encore d'étiquettes</h2>
