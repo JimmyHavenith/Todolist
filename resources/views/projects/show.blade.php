@@ -9,7 +9,7 @@
     {!! Form::close() !!}
   </div>
 
-  {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form', 'class' => 'sendForm']) !!}
+  {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form', 'class' => 'sendForm sendFormDesc']) !!}
     <input type="hidden" name="project" value="{{ $project->id }}">
     <ol class="unchecked-task-group">
       @foreach( $project->tasks as $task )
@@ -48,13 +48,14 @@
                   <img src="../img/icon-desc.png" alt="" />
                 </span>
                 <div class="task-infos">
-                  <p>
-                    @if( $task->description )
-                      {{ $task->description }}
-                    @else
-                      Ajouter une description
-                    @endif
+                  <p class="task-infos-p">
+                  @if( $task->description )
+                    {{ $task->description }}
+                  @else
+                    Ajouter une description
+                  @endif
                   </p>
+                  <input type="submit" name="name" value="Modifier la description">
                 </div>
               </div>
             </div>

@@ -99,8 +99,6 @@
       })
     });
 
-
-
     $(document).on("focusout","#tasks-change-id",function(e){
       var value = $(this).val();
       $(this).replaceWith('<span class="tasks-item-name">'+value+'</span>');
@@ -132,6 +130,38 @@
       } );
 
     });
+
+
+    //Edit description task
+    $('.task-infos-p').click(function(e){
+      var value = $(this).text();
+      $(this).replaceWith('<textarea id="tasks-change-desc" class="tasks-change-desc">'+value+'</textarea>');
+      console.log(value);
+      $("#tasks-change-desc").focus();
+    });
+
+    // prevent form
+    $('.sendFormDesc').submit( function(e) {
+      e.preventDefault();
+      var idTaskDesc = $('#tasks-change-desc').parent().parent().parent().parent().children('.check-task-box').attr('id');
+      var text = $('#tasks-change-desc').val();
+      console.log(text);
+      $.ajax({
+        type: "GET",
+        url: 'descriptionName/' + idTaskDesc,
+        data: 'text=' + text,
+        success: function(){
+          $('#tasks-change-desc').replaceWith('<div class="task-infos"><p>'+text+'</p></div>');
+        }
+      })
+    });
+
+    $(document).on("focusout","#tasks-change-desc",function(e){
+      var value = $(this).val();
+      $(this).replaceWith('<div class="task-infos"><p>'+value+'</p></div>');
+    });
+
+
 
 
   });

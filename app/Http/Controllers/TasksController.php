@@ -240,4 +240,13 @@ class TasksController extends Controller {
 
 	}
 
+	public function descriptionName($id)
+	{
+		$task = Task::findOrFail($id);
+		$text = Input::get('text');
+		$task->description = $text;
+		$task->save();
+
+	}
+
 }
