@@ -14,13 +14,13 @@
     </ul>
   </div>
   <div class="div-change-typo">
-    <h3 class="title-change-typo">Changer de typographie</h3>
+    <h3 class="title-change-typo">Changer de police</h3>
     <ul>
-      <li>Typo</li>
-      <li>Typo</li>
-      <li>Typo</li>
-      <li>Typo</li>
-      <li>Typo</li>
+      <li class="font-1"><a class="Typo typo-lato" href="{{ action( 'SettingsController@updateFont', ['$number' => '1'] ) }}">Lato</a></li>
+      <li class="font-2"><a class="Typo typo-open" href="{{ action( 'SettingsController@updateFont', ['$number' => '2'] ) }}">Open sans</a></li>
+      <li class="font-3"><a class="Typo typo-roboto" href="{{ action( 'SettingsController@updateFont', ['$number' => '3'] ) }}">Roboto</a></li>
+      <li class="font-4"><a class="Typo typo-montserrat" href="{{ action( 'SettingsController@updateFont', ['$number' => '4'] ) }}">Montserrat</a></li>
+      <li class="font-5"><a class="Typo typo-indie" href="{{ action( 'SettingsController@updateFont', ['$number' => '5'] ) }}">Indie Flower</a></li>
     </ul>
   </div>
 @endsection

@@ -61,8 +61,6 @@ Route::get('tomorrow', ['as' => 'tomorrow', 'uses' => 'TasksController@tomorrow'
 
 Route::post('check', ['as' => 'check', 'uses' => 'TasksController@check']);
 
-// Theme color
-
 Route::get('projects/checkSingle/{id}', ['as' => 'checkSingle', 'uses' => 'TasksController@checkSingle']); //ajax
 Route::get('projects/uncheckSingle/{id}', ['as' => 'uncheckSingle', 'uses' => 'TasksController@uncheckSingle']); //ajax
 Route::get('projects/tasksName/{id}', ['as' => 'tasksName', 'uses' => 'TasksController@tasksName']); // ajax
@@ -73,3 +71,4 @@ Route::get('projects/dateName/{id}', ['as' => 'dateName', 'uses' => 'TasksContro
 
 Route::resource('settings', 'SettingsController');
 Route::get( 'updateColor/{number}', [ 'as' => 'updateColor', 'uses' => 'SettingsController@updateColor', 'middleware' => 'auth' ] );
+Route::get( 'updateFont/{number}', [ 'as' => 'updateFont', 'uses' => 'SettingsController@updateFont', 'middleware' => 'auth' ] );

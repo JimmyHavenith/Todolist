@@ -68,6 +68,16 @@
       .icon-project-edit:hover{
         display: block;
       }
+      .icon-project-click{
+        left: 15px;
+      }
+      .project-change-name {
+          border: 1px solid $color-border;
+          font-size: 16px;
+          margin-left: 45px;
+          padding: 15px;
+          width: 76%;
+      }
     }
     .lists-add{
       a{

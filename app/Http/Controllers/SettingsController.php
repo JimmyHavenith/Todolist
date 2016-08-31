@@ -23,4 +23,11 @@ class SettingsController extends Controller
     return redirect()->back();
   }
 
+  public function updateFont( $number ){
+    $user = User::findOrFail( \Auth::user()->id );
+    $user->font = 'font_'.$number;
+    $user->save();
+    return redirect()->back();
+  }
+
 }

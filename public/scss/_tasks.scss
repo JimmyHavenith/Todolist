@@ -122,17 +122,24 @@
     .tasks-done-title{
       margin-top: 15px;
     }
+    .checked-task-group{
+      display: none;
+    }
     ol{
       margin: 15px 0;
       .tasks-item{
         border-radius: 3px;
-        background-color: $color-bluuue;
         padding: 15px 0 15px 15px;
         margin-bottom: 15px;
         border: 1px solid $color-border;
         color: white;
         .tasks-item-name{
           margin-left: 15px;
+        }
+        .tasks-change-name{
+          padding: 10px;
+          margin-left: 15px;
+          font-size: 16px;
         }
         .tasks-item-button{
           float: right;

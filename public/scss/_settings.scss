@@ -4,6 +4,11 @@
 .div-change-color{
   display: block;
   width: 100%;
+  .color-actual{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+  }
   .select-color{
     margin-top: 20px;
     li{
@@ -57,4 +62,36 @@
   display: block;
   clear: both;
   content: "";
+}
+.div-change-typo{
+  ul{
+    margin-top: 20px;
+    li{
+      list-style-type: circle;
+      margin-left: 17px;
+      margin-top: 10px;
+      a{
+        color: $color-black;
+        text-decoration: none;
+      }
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+    .typo-lato{
+      font-family: $font-1;
+    }
+    .typo-open{
+      font-family: $font-2;
+    }
+    .typo-roboto{
+      font-family: $font-3;
+    }
+    .typo-montserrat{
+      font-family: $font-4;
+    }
+    .typo-indie{
+      font-family: $font-5;
+    }
+  }
 }

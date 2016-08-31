@@ -77,6 +77,17 @@
       }
     });
 
+    // See task done
+    $('.tasks-done-title a').click(function(e) {
+      e.preventDefault();
+      var taskList = $('.checked-task-group');
+      if(taskList.css('display') == 'block'){
+        taskList.css('display', 'none');
+      } else{
+        taskList.css('display', 'block');
+      }
+    });
+
 
     // Change project name
     $('.project-name-change-icon').click(function(e){
@@ -84,7 +95,7 @@
       var value = $(this).parent().children('.project-name-change').children('span').text();
       var id = $(this).parent().attr('id');
 
-      $(this).parent().children('.project-name-change').replaceWith('<input id="project-change-id" class="project-change-name" type="text" value="'+value+'">');
+      $(this).parent().children('.project-name-change').replaceWith('<img class="icon-project-click" src="/img/icon-project.png" alt="" /><input id="project-change-id" class="project-change-name" type="text" value="'+value+'">');
       $("#project-change-id").focus();
 
       $("#project-change-id").keypress( function(e) {
@@ -129,30 +140,6 @@
     $(document).on("focusout","#tasks-change-id",function(e){
       var value = $(this).val();
       $(this).replaceWith('<span class="tasks-item-name">'+value+'</span>');
-    });
-
-
-    //Edit description task
-    $('.task-infos-p').click(function(e){
-      var value = $(this).text();
-      $(this).replaceWith('<textarea id="tasks-change-desc" class="tasks-change-desc">'+value+'</textarea>');
-      $("#tasks-change-desc").focus();
-    });
-
-    // prevent form
-    $('.sendFormDesc').submit( function(e) {
-      e.preventDefault();
-      var idTaskDesc = $('#tasks-change-desc').parent().parent().parent().parent().children('.check-task-box').attr('id');
-      var text = $('#tasks-change-desc').val();
-      console.log(text);
-      $.ajax({
-        type: "GET",
-        url: 'descriptionName/' + idTaskDesc,
-        data: 'text=' + text,
-        success: function(){
-          $('#tasks-change-desc').replaceWith('<div class="task-infos"><p class="task-infos-p">'+text+'</p></div>');
-        }
-      })
     });
 
   });

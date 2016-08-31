@@ -1,0 +1,25 @@
+@mixin font-theme( $main-font ) {
+  header, section, footer{
+    font-family: $main-font;
+  }
+
+}
+
+.default-font {
+  @include font-theme( $font-1);
+}
+.font_1 {
+  @include font-theme( $font-1);
+}
+.font_2 {
+  @include font-theme( $font-2);
+}
+.font_3 {
+  @include font-theme( $font-3);
+}
+.font_4 {
+  @include font-theme( $font-4);
+}
+.font_5 {
+  @include font-theme( $font-5);
+}

@@ -1,6 +1,9 @@
-@mixin color-theme( $mainColor ) {
+@mixin color-theme( $main-color ) {
   .header {
-    background-color: $mainColor;
+    background-color: $main-color;
+  }
+  .tasks-item {
+    background-color: $main-color;
   }
 }
 

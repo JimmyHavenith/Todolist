@@ -52,7 +52,35 @@ table {
   border-spacing: 0;
 }
 
+.default-font header, .default-font section, .default-font footer {
+  font-family: "Lato", sans-serif;
+}
+
+.font_1 header, .font_1 section, .font_1 footer {
+  font-family: "Lato", sans-serif;
+}
+
+.font_2 header, .font_2 section, .font_2 footer {
+  font-family: "Open Sans", sans-serif;
+}
+
+.font_3 header, .font_3 section, .font_3 footer {
+  font-family: "Roboto", sans-serif;
+}
+
+.font_4 header, .font_4 section, .font_4 footer {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font_5 header, .font_5 section, .font_5 footer {
+  font-family: "Indie Flower", cursive;
+}
+
 .default .header {
+  background-color: #2c3e50;
+}
+
+.default .tasks-item {
   background-color: #2c3e50;
 }
 
@@ -60,7 +88,15 @@ table {
   background-color: #2c3e50;
 }
 
+.color_1 .tasks-item {
+  background-color: #2c3e50;
+}
+
 .color_2 .header {
+  background-color: #1a8c8e;
+}
+
+.color_2 .tasks-item {
   background-color: #1a8c8e;
 }
 
@@ -68,7 +104,15 @@ table {
   background-color: #e65a3a;
 }
 
+.color_3 .tasks-item {
+  background-color: #e65a3a;
+}
+
 .color_4 .header {
+  background-color: #a05663;
+}
+
+.color_4 .tasks-item {
   background-color: #a05663;
 }
 
@@ -76,7 +120,15 @@ table {
   background-color: #81bcb8;
 }
 
+.color_5 .tasks-item {
+  background-color: #81bcb8;
+}
+
 .color_6 .header {
+  background-color: #f0ad4e;
+}
+
+.color_6 .tasks-item {
   background-color: #f0ad4e;
 }
 
@@ -86,7 +138,6 @@ html {
 
 body {
   background-color: #f5f5f5;
-  font-family: "Lato", sans-serif;
   font-size: 18px;
   height: 100%;
   color: #333;
@@ -203,6 +254,18 @@ header .header-menu-nav a {
 
 .lists .lists-lists li .icon-project-edit:hover {
   display: block;
+}
+
+.lists .lists-lists li .icon-project-click {
+  left: 15px;
+}
+
+.lists .lists-lists li .project-change-name {
+  border: 1px solid #e6e6e6;
+  font-size: 16px;
+  margin-left: 45px;
+  padding: 15px;
+  width: 76%;
 }
 
 .lists .lists-lists .lists-add a {
@@ -360,13 +423,16 @@ header .header-menu-nav a {
   margin-top: 15px;
 }
 
+.tasks .tasks-tasks .checked-task-group {
+  display: none;
+}
+
 .tasks .tasks-tasks ol {
   margin: 15px 0;
 }
 
 .tasks .tasks-tasks ol .tasks-item {
   border-radius: 3px;
-  background-color: #2c3e50;
   padding: 15px 0 15px 15px;
   margin-bottom: 15px;
   border: 1px solid #e6e6e6;
@@ -375,6 +441,12 @@ header .header-menu-nav a {
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-name {
   margin-left: 15px;
+}
+
+.tasks .tasks-tasks ol .tasks-item .tasks-change-name {
+  padding: 10px;
+  margin-left: 15px;
+  font-size: 16px;
 }
 
 .tasks .tasks-tasks ol .tasks-item .tasks-item-button {
@@ -795,6 +867,12 @@ footer a {
   width: 100%;
 }
 
+.div-change-color .color-actual {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
 .div-change-color .select-color {
   margin-top: 20px;
 }
@@ -858,4 +936,43 @@ footer a {
   display: block;
   clear: both;
   content: "";
+}
+
+.div-change-typo ul {
+  margin-top: 20px;
+}
+
+.div-change-typo ul li {
+  list-style-type: circle;
+  margin-left: 17px;
+  margin-top: 10px;
+}
+
+.div-change-typo ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.div-change-typo ul li a:hover {
+  text-decoration: underline;
+}
+
+.div-change-typo ul .typo-lato {
+  font-family: "Lato", sans-serif;
+}
+
+.div-change-typo ul .typo-open {
+  font-family: "Open Sans", sans-serif;
+}
+
+.div-change-typo ul .typo-roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.div-change-typo ul .typo-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.div-change-typo ul .typo-indie {
+  font-family: "Indie Flower", cursive;
 }

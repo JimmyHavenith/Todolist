@@ -61,7 +61,6 @@
                       Ajouter une description
                     @endif
                     </p>
-                    <input type="submit" name="name" value="Modifier la description">
                   </div>
                 </div>
               </div>
