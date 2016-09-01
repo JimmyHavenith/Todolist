@@ -65,7 +65,8 @@
             <h3>Peu importe le support</h3>
             <div class="home-features-txt">
               <p>
-                Vous êtes sur ordinateur, mac, tablette ou smartphone ? Aucuns soucis, minimaList s'adapte à tous les supports !
+                À l'heure actuelle, il est primordiale pour un site web ou une application d'être adaptable sur tous les supports.
+                Vous êtes sur ordinateur, mac, tablette ou smartphone ? Aucuns soucis pour minimaList !
                 Vous pouvez donc planifier votre temps et votre travail n'importe où et n'importe quand.
               </p>
             </div>

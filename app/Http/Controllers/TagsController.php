@@ -133,4 +133,12 @@ class TagsController extends Controller {
 		}
 	}
 
+	public function tagsName( $id )
+	{
+		$tag = Tag::findOrFail($id);
+		$text = Input::get('text');
+		$tag->name = $text;
+		$tag->save();
+	}
+
 }

@@ -182,14 +182,17 @@
   background-color: $color-white-break;
 }
 footer{
-  padding: 75px 15px;
+  padding: 30px 15px;
   background-color: #333;
   p{
     color: white;
-    font-size: 1.1em;
+    font-size: 1em;
     text-align: center;
   }
   a{
     color: $color-greeen;
+  }
+  a:hover{
+    text-decoration: none;
   }
 }
