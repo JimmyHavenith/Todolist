@@ -34,7 +34,7 @@
       <div class="auth-features">
         <ul>
           <li>
-            <span class="auth-features-icon"><img src="../img/projects.png" alt="" /></span>
+            <span class="auth-features-icon"><img src="../img/projects.png" alt="icon projet" /></span>
             <div class="auth-features-desc">
               <h2 class="auth-features-desc-title">Trier vos tâches par projets</h2>
               <p>
@@ -44,7 +44,7 @@
             </div>
           </li>
           <li>
-            <span class="auth-features-icon"><img src="../img/etiquettes.png" alt="" /></span>
+            <span class="auth-features-icon"><img src="../img/etiquettes.png" alt="icon étiquette" /></span>
             <div class="auth-features-desc">
               <h2 class="auth-features-desc-title">Organiser vos tâches par étiquettes</h2>
               <p>
@@ -53,7 +53,7 @@
             </div>
           </li>
           <li>
-            <span class="auth-features-icon"><img src="../img/responsive.png" alt="" /></span>
+            <span class="auth-features-icon"><img src="../img/responsive.png" alt="icon responsive" /></span>
             <div class="auth-features-desc">
               <h2 class="auth-features-desc-title">Disponible sur tous les supports</h2>
               <p>

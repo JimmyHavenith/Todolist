@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class ProjectsController extends Controller {
 
 	protected $rules = [
-		'name' => ['required', 'min:3'],
+		'name' => ['required', 'min:1'],
 	];
 
 	/**
@@ -30,7 +30,7 @@ class ProjectsController extends Controller {
 		if(\Auth::check()){
 
 			if( count($project) ) {
-				$project = $project->first();
+				$project = Project::where('user_id', \Auth::id())->first();
 			} else {
 				$project = null;
 			}

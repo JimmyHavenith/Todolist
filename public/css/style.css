@@ -77,99 +77,99 @@ table {
 }
 
 .default .header {
-  background-color: #2c3e50;
+  background-color: #1a8c8e;
 }
 
 .default .tasks-item {
-  background-color: #3e5771;
-}
-
-.default .auth-options {
-  background-color: #2c3e50;
-}
-
-.default .auth-options li a:hover {
-  background-color: #233140;
-}
-
-.default .project-add-submit {
-  background-color: #2c3e50;
-}
-
-.default .project-add-submit:hover {
-  background-color: #233140;
-}
-
-.default .task-add-submit {
-  background-color: #2c3e50;
-}
-
-.default .task-add-submit:hover {
-  background-color: #233140;
-}
-
-.color_1 .header {
-  background-color: #2c3e50;
-}
-
-.color_1 .tasks-item {
-  background-color: #3e5771;
-}
-
-.color_1 .auth-options {
-  background-color: #2c3e50;
-}
-
-.color_1 .auth-options li a:hover {
-  background-color: #233140;
-}
-
-.color_1 .project-add-submit {
-  background-color: #2c3e50;
-}
-
-.color_1 .project-add-submit:hover {
-  background-color: #233140;
-}
-
-.color_1 .task-add-submit {
-  background-color: #2c3e50;
-}
-
-.color_1 .task-add-submit:hover {
-  background-color: #233140;
-}
-
-.color_2 .header {
-  background-color: #1a8c8e;
-}
-
-.color_2 .tasks-item {
   background-color: #22b6b9;
 }
 
-.color_2 .auth-options {
+.default .auth-options {
   background-color: #1a8c8e;
+}
+
+.default .auth-options li a:hover {
+  background-color: #167778;
+}
+
+.default .project-add-submit {
+  background-color: #1a8c8e;
+}
+
+.default .project-add-submit:hover {
+  background-color: #167778;
+}
+
+.default .task-add-submit {
+  background-color: #1a8c8e;
+}
+
+.default .task-add-submit:hover {
+  background-color: #167778;
+}
+
+.color_1 .header {
+  background-color: #1a8c8e;
+}
+
+.color_1 .tasks-item {
+  background-color: #22b6b9;
+}
+
+.color_1 .auth-options {
+  background-color: #1a8c8e;
+}
+
+.color_1 .auth-options li a:hover {
+  background-color: #167778;
+}
+
+.color_1 .project-add-submit {
+  background-color: #1a8c8e;
+}
+
+.color_1 .project-add-submit:hover {
+  background-color: #167778;
+}
+
+.color_1 .task-add-submit {
+  background-color: #1a8c8e;
+}
+
+.color_1 .task-add-submit:hover {
+  background-color: #167778;
+}
+
+.color_2 .header {
+  background-color: #2c3e50;
+}
+
+.color_2 .tasks-item {
+  background-color: #3e5771;
+}
+
+.color_2 .auth-options {
+  background-color: #2c3e50;
 }
 
 .color_2 .auth-options li a:hover {
-  background-color: #167778;
+  background-color: #233140;
 }
 
 .color_2 .project-add-submit {
-  background-color: #1a8c8e;
+  background-color: #2c3e50;
 }
 
 .color_2 .project-add-submit:hover {
-  background-color: #167778;
+  background-color: #233140;
 }
 
 .color_2 .task-add-submit {
-  background-color: #1a8c8e;
+  background-color: #2c3e50;
 }
 
 .color_2 .task-add-submit:hover {
-  background-color: #167778;
+  background-color: #233140;
 }
 
 .color_3 .header {
@@ -364,7 +364,7 @@ header .header-menu-nav ul li a:hover ~ .auth-options {
 }
 
 header .header-menu-nav ul li ul {
-  background-color: #2c3e50;
+  background-color: #1a8c8e;
   margin-top: 15px;
   position: absolute;
   right: 0px;
@@ -387,7 +387,7 @@ header .header-menu-nav a {
 }
 
 .lists {
-  width: 350px;
+  width: 300px;
   position: absolute;
   top: 50px;
   left: 0;
@@ -416,7 +416,7 @@ header .header-menu-nav a {
   float: lf;
   font-weight: bold;
   padding: 17px 13px;
-  width: 90px;
+  width: 73px;
   cursor: pointer;
 }
 
@@ -546,7 +546,7 @@ header .header-menu-nav a {
   height: 100%;
   border-left: 1px solid #e6e6e6;
   vertical-align: top;
-  margin-left: 350px;
+  margin-left: 300px;
 }
 
 .tasks .tasks-tasks {
@@ -1074,16 +1074,21 @@ header .header-menu-nav a {
   width: 100%;
 }
 
-.home-banner-bg h2 {
-  color: white;
-  font-size: 45px;
-  margin-bottom: 15px;
-  position: absolute;
-  top: 45%;
-  left: 42%;
+.home-banner-bg .home-banner-title {
+  display: block;
+  margin: auto;
+  width: 14%;
 }
 
-.home-banner-bg h2 span {
+.home-banner-bg .home-banner-title h2 {
+  color: white;
+  font-size: 45px;
+  margin-top: 50%;
+  position: absolute;
+  top: -100%;
+}
+
+.home-banner-bg .home-banner-title h2 span {
   font-weight: bold;
 }
 
@@ -1264,13 +1269,13 @@ footer a:hover {
 }
 
 .div-change-color .select-color .color-1 {
-  background-color: #2c3e50;
-  color: #2c3e50;
+  background-color: #1a8c8e;
+  color: #1a8c8e;
 }
 
 .div-change-color .select-color .color-2 {
-  background-color: #1a8c8e;
-  color: #1a8c8e;
+  background-color: #2c3e50;
+  color: #2c3e50;
 }
 
 .div-change-color .select-color .color-3 {
@@ -1511,6 +1516,15 @@ footer a:hover {
   }
   .home-a .home-about .home-about-create a {
     font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  /* Dashboard*/
+  .unchecked-task-group .tasks-item .tasks-item-button {
+    float: none !important;
+    margin-left: 30px;
+    margin-top: 18px;
   }
 }
 

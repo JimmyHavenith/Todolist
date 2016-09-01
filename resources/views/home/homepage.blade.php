@@ -8,7 +8,9 @@
       </div>
     </div>
     <div class="home-banner-bg">
-      <h2>minima<span>List</span></h2>
+      <div class="home-banner-title">
+        <h2>minima<span>List</span></h2>
+      </div>
     </div>
   </section>
   <section class="home-a">
@@ -20,7 +22,7 @@
         minimaList est là pour vous aider à réaliser toutes vos tâches personnelles et professionnelles.
       </p>
       <div class="home-about-create">
-        <a href="/auth/register">Créer un compte gratuitement</a>
+        <a title="Créer un compte" href="/auth/register">Créer un compte gratuitement</a>
       </div>
     </div>
   </section>
@@ -29,7 +31,7 @@
       <div class="home-features-projects home-features-div">
         <div class="home-features-width">
           <div class="home-features-div-div">
-            <img src="../img/projects2.png" alt="" />
+            <img src="../img/projects2.png" alt="icon projet" />
             <h3>Organiser par projets</h3>
             <div class="home-features-txt">
               <p>
@@ -39,17 +41,17 @@
             </div>
           </div>
           <div class="home-features-div-img">
-            <img src="../img/mac2.png" alt="" />
+            <img src="../img/mac2.png" alt="image illustrative d'un ordinateur" />
           </div>
         </div>
       </div>
       <div class="home-features-etiquettes home-features-div">
         <div class="home-features-width">
           <div class="home-features-div-img">
-            <img src="../img/tablette.png" alt="" />
+            <img src="../img/tablette.png" alt="image illustrative d'une tablette" />
           </div>
           <div class="home-features-div-div">
-            <img src="../img/etiquettes2.png" alt="" />
+            <img src="../img/etiquettes2.png" alt="icon étiquette" />
             <h3>Lister par étiquettes</h3>
             <div class="home-features-txt">
               <p>
@@ -62,7 +64,7 @@
       <div class="home-features-responsive home-features-div">
         <div class="home-features-width">
           <div class="home-features-div-div">
-            <img src="../img/responsive2.png" alt="" />
+            <img src="../img/responsive2.png" alt="icon responsive" />
             <h3>Peu importe le support</h3>
             <div class="home-features-txt">
               <p>
@@ -73,7 +75,7 @@
             </div>
           </div>
           <div class="home-features-div-img">
-            <img src="../img/gsm.png" alt="" />
+            <img src="../img/gsm.png" alt="image illustrative d'un smartphone" />
           </div>
         </div>
       </div>

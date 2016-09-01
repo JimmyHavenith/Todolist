@@ -219,6 +219,18 @@
     }
   }
 }
+@media screen and (max-width: 450px) {
+  /* Dashboard*/
+  .unchecked-task-group{
+    .tasks-item{
+      .tasks-item-button{
+        float: none !important;
+        margin-left: 30px;
+        margin-top: 18px;
+      }
+    }
+  }
+}
 @media screen and (max-width: 380px) {
   /* Home page*/
   #home-page{

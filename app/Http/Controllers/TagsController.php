@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class TagsController extends Controller {
 
 	protected $rules = [
-		'name' => ['required', 'min:3'],
+		'name' => ['required', 'min:1'],
 	];
 
 	/**
@@ -30,7 +30,7 @@ class TagsController extends Controller {
 		if(\Auth::check()){
 
 			if( count($tag) ) {
-				$tag = $tag->first();
+				$tag = Tag::where('user_id', \Auth::id())->first();
 			} else {
 				$tag = null;
 			}

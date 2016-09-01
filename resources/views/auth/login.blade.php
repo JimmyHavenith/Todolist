@@ -32,7 +32,7 @@
     <div class="auth-register">
       <p>
         Vous n'avez pas encore de compte ? </br>
-        <a href="/auth/register">Créer un compte gratuitement</a>
+        <a title="Créer un compte" href="/auth/register">Créer un compte gratuitement</a>
       </p>
     </div>
   </div>

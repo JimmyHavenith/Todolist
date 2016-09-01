@@ -4,7 +4,7 @@
   @if( $tag == null )
     <h2>Vous n'avez pas encore d'étiquettes</h2>
   @else
-  <h2>{{ $tag->name }}</h2>
+    <h2>{{ $tag->name }}</h2>
 
   {!! Form::model(new App\Task, ['route' => ['check'], 'role' => 'form', 'class' => 'sendForm sendFormDesc']) !!}
     <input type="hidden" name="project" value="{{ $tag->id }}">
@@ -16,22 +16,19 @@
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
             <div class="tasks-item-button">
               <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">
-                <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
+                <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="icon pour voir la tache" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
               </a>
               <a title="editer la tâche" class="tasks-item-option" href="{{ route('tags.tasks.edit', array($tag->slug, $task->slug)) }}">
-                <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
+                <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="icon pour éditer la tache" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
               </a>
               <a title="Supprimer la tâche" class="tasks-item-option" href="">
-                <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
+                <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="icon pour supprimer la tache" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
               </a>
-              <!-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('tags.tasks.destroy', $tag->slug, $task->slug))) !!}
-              {{Form::button('<span class="task-item-option">Supprimer la tâche</span>', array('type' => 'submit'))}}
-              {!! Form::close() !!} -->
             </div>
             <div class="tasks-item-infos">
               <div class="tasks-item-infos-date">
                 <span class="tasks-item-infos-icon">
-                    <img src="../img/icon-date.png" alt="" />
+                    <img src="../img/icon-date.png" alt="icone échéance de la tache" />
                 </span>
                 <div class="task-infos">
                   <p>
@@ -45,7 +42,7 @@
               </div>
               <div class="tasks-item-infos-desc">
                 <span class="tasks-item-infos-icon">
-                  <img src="../img/icon-desc.png" alt="" />
+                  <img src="../img/icon-desc.png" alt="icone description de la tache" />
                 </span>
                 <div class="task-infos">
                   <p>
@@ -63,7 +60,7 @@
       @endforeach
     </ol>
 
-    <span class="tasks-done-title"><a href="#">Afficher les tâches effectuées</a></span>
+    <span class="tasks-done-title"><a title="Afficher les tâches effectuées" href="#">Afficher les tâches effectuées</a></span>
     <input type="hidden" name="project" value="{{ $tag->id }}">
     <ol class="checked-task-group">
       @foreach( $tag->tasks as $task )
@@ -73,22 +70,19 @@
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
           <div class="tasks-item-button">
             <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">
-              <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
+              <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="icon pour voir la tâche" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
             </a>
             <a title="editer la tâche" class="tasks-item-option" href="{{ route('tags.tasks.edit', array($tag->slug, $task->slug)) }}">
-              <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
+              <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="icon pour éditer la tâche" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
             </a>
             <a title="Supprimer la tâche" class="tasks-item-option" href="{{ route('tags.tasks.destroy', array($tag->slug, $task->slug)) }}">
-              <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="" /></span><span class="tasks-item-option-txt">Supprimer la Tâche</span>
+              <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="icon pour supprimer la tâche" /></span><span class="tasks-item-option-txt">Supprimer la Tâche</span>
             </a>
-            <!-- {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('tags.tasks.destroy', $tag->slug, $task->slug))) !!}
-            {{Form::button('<span class="task-item-option">Supprimer la tâche</span>', array('type' => 'submit'))}}
-            {!! Form::close() !!} -->
             </div>
             <div class="tasks-item-infos">
               <div class="tasks-item-infos-date">
                 <span class="tasks-item-infos-icon">
-                    <img src="../img/icon-date.png" alt="" />
+                    <img src="../img/icon-date.png" alt="icone pour l'échéance de la tâche" />
                 </span>
                 <div class="task-infos">
                   <p>
@@ -102,7 +96,7 @@
               </div>
               <div class="tasks-item-infos-desc">
                 <span class="tasks-item-infos-icon">
-                  <img src="../img/icon-desc.png" alt="" />
+                  <img src="../img/icon-desc.png" alt="icone pour la description de la tâche" />
                 </span>
                 <div class="task-infos">
                   <p>

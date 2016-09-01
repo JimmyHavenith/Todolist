@@ -14,19 +14,19 @@
                   <label><input type="checkbox" id="cbox1" value="premiere_checkbox"><span class="tasks-item-name">{{ $task->name }}</span></label>
                   <div class="tasks-item-button">
                     <a title="voir la tâche" class="tasks-item-option task-item-see" href="{{ route('projects.tasks.show', array($value->slug, $task->slug)) }}">
-                      <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
+                      <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="icone pour voir la tâche" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>
                     </a>
                     <a title="editer la tâche" class="tasks-item-option" href="{{ route('projects.tasks.edit', array($value->slug, $task->slug)) }}">
-                      <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
+                      <span class="tasks-item-option-logo"><img src="../img/icon-edit.png" alt="icone pour éditer la tâche" /></span><span class="tasks-item-option-txt">Editer la Tâche</span>
                     </a>
                     <a title="Supprimer la tâche" class="tasks-item-option task-item-delete" href="{{ action('TasksController@destroy', ['id' => $task->id]) }}">
-                      <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="" /></span><span class="tasks-item-option-txt">Supprimer la Tâche</span>
+                      <span class="tasks-item-option-logo"><img src="../img/icon-delete.png" alt="icone pour supprimer la tâche" /></span><span class="tasks-item-option-txt">Supprimer la Tâche</span>
                     </a>
                   </div>
                   <div class="tasks-item-infos">
                     <div class="tasks-item-infos-date">
                       <span class="tasks-item-infos-icon">
-                          <img src="../img/icon-date.png" alt="" />
+                          <img src="../img/icon-date.png" alt="icone pour l'échéance de la tâche" />
                       </span>
                       <div class="task-infos">
                         <p>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="tasks-item-infos-desc">
                       <span class="tasks-item-infos-icon">
-                        <img src="../img/icon-desc.png" alt="" />
+                        <img src="../img/icon-desc.png" alt="icone pour la description de la tâche" />
                       </span>
                       <div class="task-infos">
                         <p>
