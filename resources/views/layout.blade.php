@@ -81,12 +81,12 @@
               <ul>
                 <?php $etiquettes = \Auth::user()->tags()->get(); ?>
                 @foreach( $etiquettes as $etiquette)
-                  <li>
-                    <a class="project-show" href="{{ route('tags.show', $etiquette->slug) }}">
+                  <li id="{{ $etiquette->id }}">
+                    <a class="project-show tag-name-change" href="{{ route('tags.show', $etiquette->slug) }}">
                       <img src="/img/icon-project.png" alt="" />
                       <span>{{ $etiquette->name }}</span>
                       <a class="icon-project-delete" href="{{ action('TagsController@destroy', ['id' => $etiquette->id]) }}"><img src="/img/icon-project-delete.png" alt="" /><span>Supprimer</span></a>
-                      <a class="icon-project-edit" href="{{ route('tags.edit', array($etiquette->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
+                      <a class="icon-project-edit tag-name-change-icon" href="{{ route('tags.edit', array($etiquette->slug)) }}"><img src="/img/icon-project-edit.png" alt="" /><span>Editer</span></a>
                     </a>
                   </li>
                 @endforeach

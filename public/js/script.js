@@ -32,7 +32,6 @@
     $('.home-banner-bg h2').css('top', topTitle);
 
 
-
     // Delete task
     $('.task-item-delete').click(function(e){
       e.preventDefault();
@@ -168,6 +167,31 @@
             data: 'text=' + text,
             success: function(){
               $('#project-change-id').replaceWith('<a href="http://localhost/projects/" class="project-show project-name-change"><img alt="" src="/img/icon-project.png"><span class="project-name-change-content">'+text+'</span></a>');
+            }
+          })
+        }
+      } );
+
+    });
+
+    // Change project name
+    $('.tag-name-change-icon').click(function(e){
+      e.preventDefault();
+      var value = $(this).parent().children('.tag-name-change').children('span').text();
+      var id = $(this).parent().attr('id');
+
+      $(this).parent().children('.tag-name-change').replaceWith('<input id="tag-change-id" class="tag-change-name" type="text" value="'+value+'">');
+      $("#tag-change-id").focus();
+
+      $("#tag-change-id").keypress( function(e) {
+        if( e.keyCode == 13 ) {
+          var text = $('#tag-change-id').val();
+          $.ajax({
+            type: "GET",
+            url: 'tagsName/' + id,
+            data: 'text=' + text,
+            success: function(){
+              $('#tag-change-id').replaceWith('<a href="http://localhost/tags/" class="tag-show tag-name-change"><img alt="" src="/img/icon-project.png"><span class="project-name-change-content">'+text+'</span></a>');
             }
           })
         }

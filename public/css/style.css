@@ -511,7 +511,7 @@ header .header-menu-nav a {
   left: 15px;
 }
 
-.lists .lists-lists li .project-change-name {
+.lists .lists-lists li .project-change-name, .lists .lists-lists li .tag-change-name {
   border: 1px solid #e6e6e6;
   font-size: 16px;
   padding: 15px;
@@ -1188,18 +1188,22 @@ header .header-menu-nav a {
 }
 
 footer {
-  padding: 75px 15px;
+  padding: 30px 15px;
   background-color: #333;
 }
 
 footer p {
   color: white;
-  font-size: 1.1em;
+  font-size: 1em;
   text-align: center;
 }
 
 footer a {
   color: #1a8c8e;
+}
+
+footer a:hover {
+  text-decoration: none;
 }
 
 .title-change-color, .title-change-typo {
