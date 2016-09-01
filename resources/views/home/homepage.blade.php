@@ -13,6 +13,7 @@
   </section>
   <section class="home-a">
     <div class="home-about">
+      <h2>minima<span>List</span></h2>
       <p>
         minimaList est la manière la plus simple de mener à bien toutes vos tâches.
         Que vous souhaitiez planifier vos vacances, gérer plusieurs projets professionnels,

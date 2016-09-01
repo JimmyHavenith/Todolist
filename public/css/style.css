@@ -1097,6 +1097,10 @@ header .header-menu-nav a {
   padding: 25px 0;
 }
 
+.home-a .home-about h2 {
+  display: none;
+}
+
 .home-a .home-about p {
   width: 45%;
   display: block;
@@ -1171,16 +1175,16 @@ header .header-menu-nav a {
   width: 50%;
 }
 
-.home-f .home-features-div .home-features-width .home-features-div-img img {
-  float: right;
-}
-
 .home-f .home-features-div .home-features-width .home-features-div-div, .home-f .home-features-div .home-features-width .home-features-div-img {
   vertical-align: middle;
 }
 
 .home-features-etiquettes img {
-  float: left !important;
+  float: left;
+}
+
+.home-features-projects img, .home-features-responsive img {
+  float: right;
 }
 
 .home-features-etiquettes {
@@ -1323,4 +1327,154 @@ footer a:hover {
 
 .div-change-typo ul .typo-indie {
   font-family: "Indie Flower", cursive;
+}
+
+@media screen and (max-width: 1280px) {
+  /* Home page*/
+  .home-a .home-about p {
+    width: 60%;
+  }
+  .home-a .home-about .home-about-create {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  /* Home page*/
+  .home-f .home-features-div-div {
+    float: left;
+  }
+  .home-f .home-features-projects img, .home-f .home-features-responsive img {
+    width: 80%;
+  }
+  .home-f .home-features-etiquettes img {
+    float: right;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1015px) {
+  /* Home page*/
+  .home-f .home-features-div .home-features-width .home-features-div-div {
+    width: 40% !important;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-div .home-features-txt p {
+    font-size: 1em;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-img {
+    width: 60% !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* Home page*/
+  .home-a .home-about p {
+    width: 90%;
+    font-size: 1.1em;
+  }
+  .home-a .home-about .home-about-create {
+    width: 45%;
+  }
+  .home-f .home-features-div .home-features-width {
+    width: 97%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Home page*/
+  .home-f .home-features-div .home-features-width .home-features-div-div {
+    width: 50% !important;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-div .home-features-txt {
+    margin-top: 25px;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-div .home-features-txt p {
+    font-size: 0.9em;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-img {
+    width: 50% !important;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-img img {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 695px) {
+  /* Home page*/
+  .home-a .home-about p {
+    width: 92%;
+    font-size: 1.1em;
+  }
+  .home-a .home-about .home-about-create {
+    width: 65%;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-div {
+    display: block;
+    float: none;
+    margin: auto;
+    width: 90% !important;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-div img {
+    width: 30px;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-div .home-features-txt {
+    margin-top: 25px;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-div .home-features-txt p {
+    font-size: 0.9em;
+  }
+  .home-f .home-features-div .home-features-width .home-features-div-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 695px) {
+  /* Home page*/
+  .home-a .home-about p {
+    width: 92%;
+    font-size: 0.9em;
+  }
+  .home-a .home-about .home-about-create {
+    width: 92%;
+  }
+  .home-a .home-about .home-about-create a {
+    font-size: 1.1em;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  /* Home page*/
+  #home-page .header-home {
+    height: 75px;
+  }
+  #home-page .header-home .header-home-menu .header-home-menu-nav ul li {
+    float: none;
+    margin-bottom: 10px;
+  }
+  .home-b {
+    display: none;
+  }
+  .home-a {
+    padding: 85px 20px 20px;
+  }
+  .home-a .home-about h2 {
+    color: white;
+    display: block;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .home-a .home-about h2 span {
+    font-weight: bold;
+  }
+  .home-a .home-about p {
+    width: 92%;
+    font-size: 0.9em;
+  }
+  .home-a .home-about .home-about-create {
+    width: 92%;
+  }
+  .home-a .home-about .home-about-create a {
+    font-size: 0.9em;
+  }
 }
