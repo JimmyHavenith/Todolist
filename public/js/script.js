@@ -20,8 +20,6 @@
       }
     });
 
-    
-
     // Menu hamburger
     if ( $(window).width() <= 768 ) {
       $('.menu-hb-button').click(function(e){
