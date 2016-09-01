@@ -1,6 +1,12 @@
 .lists{
-  float: left;
-  width: 20%;
+  width: 350px;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  .auth-responsive{
+    display: none;
+  }
   .lists-scroll form {
     margin-top: 35px;
   }
@@ -17,7 +23,7 @@
     float: lf;
     font-weight: bold;
     padding: 17px 13px;
-    width: 78px;
+    width: 90px;
     cursor: pointer;
   }
   .lists-lists{

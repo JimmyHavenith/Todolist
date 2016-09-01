@@ -1,10 +1,9 @@
 .tasks{
-  display: inline-block;
-  width: 79.7%;
   background-color: white;
   height: 100%;
   border-left: 1px solid $color-border;
   vertical-align: top;
+  margin-left: 350px;
   .tasks-tasks{
     padding: 15px;
     h2{
@@ -157,9 +156,6 @@
     }
     .tasks-done-title{
       margin-top: 15px;
-    }
-    .checked-task-group{
-      display: none;
     }
     ol{
       margin: 15px 0;

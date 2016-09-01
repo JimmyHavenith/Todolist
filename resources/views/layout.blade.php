@@ -24,7 +24,7 @@
           <ul>
           @if( Auth::check() )
             <li>
-              <a href="#">{{ Auth::user()->name }}</a>
+              <a class="menu-hb-button" href="#">{{ Auth::user()->name }} <img src="/img/icon-hb.png" alt="" /></a>
               <ul class="auth-options">
                 <li><a href="/settings">Paramètres</a></li>
                 <li><a href="/auth/logout">Se déconnecter</a></li>
@@ -42,6 +42,10 @@
       <div class="lists-lists">
         <div class="lists-inner">
           <div class="lists-scroll">
+            <ul class="auth-responsive">
+              <li><a href="/settings"><img src="/img/icon-setting.png" alt="" /><span>Paramètres</span></a></li>
+              <li><a href="/auth/logout"><img src="/img/icon-logout.png" alt="" /><span>Se déconnecter</span></a></li>
+            </ul>
             <ul>
               <li><a href="/today"><img src="/img/icon-today.png" alt="" /><span>Aujourd'hui</span></a></li>
               <li><a href="/tomorrow"><img src="/img/icon-week.png" alt="" /><span>Demain</span></a></li>

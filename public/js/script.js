@@ -31,6 +31,22 @@
     $('.home-banner-bg h2').css('left', leftTitle);
     $('.home-banner-bg h2').css('top', topTitle);
 
+    // Menu hamburger
+    if ( $(window).width() <= 768 ) {
+      $('.menu-hb-button').click(function(e){
+        var widthLists = $('.lists').width();
+        if(parseInt($('.lists').css('left')) == 0){
+          e.preventDefault();
+          $('.lists').css('left', '-350px');
+          $('.lists').css('transition', 'all 0.5s');
+        } else{
+          e.preventDefault();
+          $('.lists').css('left', '0');
+          $('.lists').css('transition', 'all 0.5s');
+        }
+      })
+    }
+
 
     // Delete task
     $('.task-item-delete').click(function(e){
@@ -138,6 +154,7 @@
     });
 
     // See task done
+    $('.checked-task-group').css('display', 'none');
     $('.tasks-done-title a').click(function(e) {
       e.preventDefault();
       var taskList = $('.checked-task-group');
