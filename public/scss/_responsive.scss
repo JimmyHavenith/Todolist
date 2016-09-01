@@ -95,6 +95,12 @@
     }
   }
 }
+@media screen and (max-width: 733px) {
+  /* Register page*/
+  #auth-page .auth .auth-form-register, #auth-page .auth .auth-features {
+    display: none;
+  }
+}
 @media screen and (max-width: 695px) {
   /* Home page*/
   .home-a{
@@ -194,5 +200,10 @@
         }
       }
     }
+  }
+
+  /* Login Page */
+  #auth-page .auth .auth-auth .auth-form, #auth-page .auth .auth-auth .auth-form-register {
+    width: 285px;
   }
 }

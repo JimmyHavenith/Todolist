@@ -27,7 +27,7 @@
             <input type="password" name="password_confirmation">
           </div>
           <div>
-            <button class="auth-submit" type="submit">Se connecter</button>
+            <button class="auth-submit" type="submit">S'inscrire</button>
           </div>
         </form>
       </div>
