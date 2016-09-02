@@ -12,7 +12,7 @@
       @foreach( $tag->tasks as $task )
         @if( $task->completed == 0 )
           <li class="tasks-item">
-            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" class="check-task-box" value="{{ $task->id }}"><span id="title-task-name" contenteditable data-name="custom-text" class="tasks-item-name">{{ $task->name }}</span>
+            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" class="ajax-change-name check-task-box-tag" value="{{ $task->id }}"><span id="title-task-name" contenteditable data-name="custom-text" class="tasks-item-name">{{ $task->name }}</span>
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
             <div class="tasks-item-button">
               <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">
@@ -66,7 +66,7 @@
       @foreach( $tag->tasks as $task )
         @if( $task->completed == 1 )
           <li class="tasks-item">
-            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked" class="check-task-box-tag completed"><span class="tasks-item-name">{{ $task->name }}</span>
+            <input type="checkbox" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked" class="ajax-change-name check-task-box-tag completed"><span id="title-task-name" contenteditable data-name="custom-text" class="tasks-item-name">{{ $task->name }}</span>
             <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
           <div class="tasks-item-button">
             <a title="voir la tâche" class="tasks-item-option" href="{{ route('tags.tasks.show', array($tag->slug, $task->slug)) }}">

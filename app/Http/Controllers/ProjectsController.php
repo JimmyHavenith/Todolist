@@ -3,6 +3,7 @@
 use Input;
 use Redirect;
 use App\Project;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Flash;

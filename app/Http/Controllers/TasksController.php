@@ -87,7 +87,7 @@ class TasksController extends Controller {
 	 */
 	public function edit(Project $project, Task $task)
 	{
-		$tags = Tag::all();
+		$tags = \Auth::user()->tags()->get();
 		return view('tasks.edit', compact('project', 'task', 'tags'));
 	}
 

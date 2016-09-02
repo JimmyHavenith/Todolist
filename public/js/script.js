@@ -211,7 +211,7 @@
           el = event.target,
           input = el.nodeName != 'INPUT' && el.nodeName != 'TEXTAREA',
           data = {};
-          var idTask = $(el).parent().children('.check-task-box').attr('id');
+          var idTask = $(el).parent().children('.ajax-change-name').attr('id');
 
 
       if (input) {
