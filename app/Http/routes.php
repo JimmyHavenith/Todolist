@@ -70,6 +70,7 @@ Route::get('tags/checkSingleTag/{id}', ['as' => 'checkSingle', 'uses' => 'TasksC
 Route::get('tags/uncheckSingleTag/{id}', ['as' => 'uncheckSingle', 'uses' => 'TasksController@uncheckSingle']); //ajax
 
 Route::get('projects/tasksName/{id}', ['as' => 'tasksName', 'uses' => 'TasksController@tasksName']); // ajax
+Route::get('tags/tasksName/{id}', ['as' => 'tasksName', 'uses' => 'TasksController@tasksName']); // ajax
 
 Route::get('projects/projectsName/{id}', ['as' => 'projectsName', 'uses' => 'ProjectsController@projectsName']); // ajax
 Route::get('tags/tagsName/{id}', ['as' => 'tagsName', 'uses' => 'TagsController@tagsName']); // ajax

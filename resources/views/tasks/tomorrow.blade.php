@@ -11,7 +11,7 @@
             @if( $task->project_id == $value->id )
               <li>
                 <div class="tasks-item">
-                  <label><input type="checkbox" id="cbox1" value="premiere_checkbox"><span class="tasks-item-name">{{ $task->name }}</span></label>
+                  <span class="tasks-item-name">{{ $task->name }}</span>
                   <div class="tasks-item-button">
                     <a title="voir la tâche" class="tasks-item-option task-item-see" href="{{ route('projects.tasks.show', array($value->slug, $task->slug)) }}">
                       <span class="tasks-item-option-logo"><img src="../img/icon-see.png" alt="icone pour voir la tâche" /></span><span class="tasks-item-option-txt">Voir la Tâche</span>

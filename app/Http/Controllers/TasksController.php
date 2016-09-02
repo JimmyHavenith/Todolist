@@ -14,7 +14,7 @@ use Carbon\Carbon;
 class TasksController extends Controller {
 
 	protected $rules = [
-		'name' => ['required', 'min:3'],
+		'name' => ['required', 'min:1'],
 	];
 
 	/**

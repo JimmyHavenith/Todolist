@@ -204,33 +204,45 @@
 
     });
 
+    // Change task name
+    document.addEventListener('keydown', function (event) {
+      var esc = event.which == 27,
+          nl = event.which == 13,
+          el = event.target,
+          input = el.nodeName != 'INPUT' && el.nodeName != 'TEXTAREA',
+          data = {};
+          var idTask = $(el).parent().children('.check-task-box').attr('id');
 
-    //Edit name task
-    $('.tasks-item-name').click(function(e){
-      var value = $(this).text();
-      $(this).replaceWith('<input id="tasks-change-id" class="tasks-change-name" type="text" value="'+value+'">');
-      $("#tasks-change-id").focus();
-    });
 
-    // prevent form
-    $('.sendForm').submit( function(e) {
-      e.preventDefault();
-      var idTask = $('#tasks-change-id').parent().children('.check-task-box').attr('id');
-      var text = $('#tasks-change-id').val();
-      $.ajax({
-        type: "GET",
-        url: 'tasksName/' + idTask,
-        data: 'text=' + text,
-        success: function(){
-          $('#tasks-change-id').replaceWith('<span class="tasks-item-name">'+text+'</span>');
+      if (input) {
+        if (esc) {
+          // restore state
+          document.execCommand('undo');
+          el.blur();
+        } else if (nl) {
+          // save
+          var text = data[el.getAttribute('data-name')] = el.innerHTML;
+          console.log(idTask);
+          $.ajax({
+            type: "GET",
+            url: 'tasksName/' + idTask,
+            data: 'text=' + text,
+            success: function(){
+              $('#tasks-change-id').replaceWith('<span class="tasks-item-name">'+text+'</span>');
+            }
+          });
+
+          log(JSON.stringify(data));
+
+          el.blur();
+          event.preventDefault();
         }
-      })
-    });
+      }
+    }, true);
 
-    $(document).on("focusout","#tasks-change-id",function(e){
-      var value = $(this).val();
-      $(this).replaceWith('<span class="tasks-item-name">'+value+'</span>');
-    });
+    function log(s) {
+      document.getElementById('title-task-name').innerHTML + s;
+    }
 
   });
 })(jQuery);

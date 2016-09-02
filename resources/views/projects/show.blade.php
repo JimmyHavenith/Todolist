@@ -17,7 +17,7 @@
         @foreach( $project->tasks as $task )
           @if( $task->completed == 0 )
             <li class="tasks-item">
-              <input type="checkbox" name="task-check[]" id="{{ $task->id }}" class="check-task-box" value="{{ $task->id }}"><span class="tasks-item-name">{{ $task->name }}</span>
+              <input type="checkbox" name="task-check[]" id="{{ $task->id }}" class="check-task-box" value="{{ $task->id }}"><span id="title-task-name" contenteditable data-name="custom-text" class="tasks-item-name">{{ $task->name }}</span>
               <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
               <div class="tasks-item-button">
                 <a title="voir la tâche" class="tasks-item-option task-item-see" href="{{ route('projects.tasks.show', array($project->slug, $task->slug)) }}">
@@ -72,7 +72,7 @@
         @foreach( $project->tasks as $task )
           @if( $task->completed == 1 )
             <li class="tasks-item">
-              <input type="checkbox" class="check-task-box completed" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked"><span class="tasks-item-name">{{ $task->name }}</span>
+              <input type="checkbox" class="check-task-box completed" name="task-check[]" id="{{ $task->id }}" value="{{ $task->id }}" checked="checked"><span id="title-task-name" contenteditable data-name="custom-text" class="tasks-item-name">{{ $task->name }}</span>
               <input type="hidden" name="all-tasks[]" value="{{ $task->id }}">
             <div class="tasks-item-button">
               <a title="voir la tâche" class="tasks-item-option task-item-see" href="{{ route('projects.tasks.show', array($project->slug, $task->slug)) }}">
